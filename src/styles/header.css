@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* background-color: #EEEEEE; */
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 900px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .user-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .notifications {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #0E6D99;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 50%;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-profile svg {
+    margin-right: 10px;
+  }

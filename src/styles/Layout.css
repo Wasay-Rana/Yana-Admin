@@ -1,0 +1,10 @@
+/* components/Layout.css */
+.app-container {
+    display: flex;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px; /* Adjust padding as needed */
+  }
+  

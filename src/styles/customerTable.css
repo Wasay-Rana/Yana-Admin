@@ -1,0 +1,72 @@
+.customer-table {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .table-actions {
+    display: flex;
+  }
+  
+  .table-actions input,
+  .table-actions select {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f8f8f8;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+  
+  .status.active {
+    background-color: #00b37e;
+    color: #0f4e3b;
+  }
+  
+  .status.inactive {
+    background-color: rgb(226, 15, 15);
+    color: #ff4d4f;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .page-numbers span {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .page-numbers span.active {
+    color: hsl(39, 100%, 63%);
+    font-weight: bold;
+  }

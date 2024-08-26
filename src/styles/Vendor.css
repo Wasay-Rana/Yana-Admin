@@ -1,0 +1,66 @@
+.vendor-page {
+    padding: 20px;
+  }
+  
+  .vendor-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .vendor-header input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-vendor {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .vendor-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .vendor-table th,
+  .vendor-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .vendor-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+  }
+  
+  .status.active {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .status.inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .edit-button {
+    background-color: #ffc107;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
