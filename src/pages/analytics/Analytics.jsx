@@ -2,7 +2,7 @@ import React from 'react';
 import { FaChartPie, FaChartLine, FaMapMarkerAlt } from 'react-icons/fa';
 import { PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
-import '../styles/analytics.css';
+import './analytics.css';
 
 const pieChartData = [
   { name: 'Group A', value: 400 },

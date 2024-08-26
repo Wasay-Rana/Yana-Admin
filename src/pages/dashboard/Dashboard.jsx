@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaMoneyBillAlt, FaShoppingCart, FaUserFriends, FaChartLine } from 'react-icons/fa';
-import CustomerTable from '../components/CustomerTable';
-import '../styles/dashboard.css';
+import CustomerTable from '../../components/customerTable/CustomerTable';
+import './dashboard.css';
 
 function Dashboard() {
   const customers = [

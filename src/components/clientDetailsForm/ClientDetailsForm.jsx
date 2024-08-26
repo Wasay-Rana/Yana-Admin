@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/ClientDetailsForm.css'
+import './clientDetailsForm.css'
+
+
 const ClientDetailsForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
     firstName: '',

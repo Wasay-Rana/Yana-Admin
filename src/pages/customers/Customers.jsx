@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import CustomerList from '../components/CustomerList';
-import ImportFileModal from '../components/ImportFileModal';
-import ClientDetailsForm from '../components/ClientDetailsForm.js';
-import '../styles/customers.css';
+
+import ClientDetailsForm from '../../components/clientDetailsForm/ClientDetailsForm.jsx';
+import CustomerList from '../../components/customerList/CustomerList.jsx';
+import ImportFileModal from '../../components/importFileModal/ImportFileModal.jsx';
+
+import './customers.css';
 
 const Customers = () => {
   const [showImportModal, setShowImportModal] = useState(false);

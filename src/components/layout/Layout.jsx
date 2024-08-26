@@ -1,8 +1,10 @@
-// components/Layout.js
 import React from 'react';
-import Sidebar from './Sidebar';
-import Header from './Header';
-import '../styles/Layout.css'; // Optional: For any specific layout styles
+
+import Header from '../header/Header';
+import Sidebar from '../sidebar/Sidebar';
+
+import './layout.css'; 
+
 
 function Layout({ children }) {
   return (

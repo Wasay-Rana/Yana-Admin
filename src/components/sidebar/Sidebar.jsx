@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaHome, FaUserAlt, FaChartLine, FaComments, FaCalendarAlt, FaWrench, FaCommentAlt, FaBars } from 'react-icons/fa';
-import '../styles/sidebar.css';
-import logo from '../assets/logo.png'; 
-import menubtn from '../assets/menu_button.png'; 
+
+import logo from '../../assets/logo.png';
+import menubtn from '../../assets/menu_button.png'; 
+
+import './sidebar.css';
+
 
 function handleAddMenuClick() {
   // Your click handling logic here

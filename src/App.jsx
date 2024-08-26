@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './components/Layout'; // Import the new Layout component
-import Dashboard from './pages/Dashboard';
-import Customers from './pages/Customers';
-import Analytics from './pages/Analytics';
-import Reviews from './pages/Reviews';
-import Vendor from './pages/Vendor';
-import Food from './pages/Food';
-import Chat from './pages/Chat';
-import SplashScreen from './components/SplashScreen';
-import LoginPage from './components/LoginPage';
-import './styles/global.css';
+
+import Analytics from './pages/analytics/Analytics';
+import Chat from './pages/chat/Chat';
+import Customers from './pages/customers/Customers';
+import Dashboard from './pages/dashboard/Dashboard';
+import Food from './pages/food/Food';
+import Layout from './components/layout/Layout';
+import LoginPage from './components/loginPage/LoginPage';
+import Reviews from './pages/reviews/Reviews';
+import SplashScreen from './components/splashScreen/SplashScreen';
+import Vendor from './pages/vendor/Vendor';
+
+import './global.css';
 
 function App() {
   return (
@@ -31,7 +33,6 @@ function App() {
 }
 
 function PrivateRoute({ children }) {
-  // Add your authentication logic here
   const isAuthenticated = true; // Replace with actual authentication check
   return isAuthenticated ? children : <Navigate to="/login" />;
 }

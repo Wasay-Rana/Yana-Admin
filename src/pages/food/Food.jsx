@@ -1,7 +1,7 @@
 // src/pages/Food.js
 
 import React, { useState, useEffect } from 'react';
-import '../styles/Food.css';
+import './Food.css';
 
 const Food = () => {
   const [meals, setMeals] = useState([]);
