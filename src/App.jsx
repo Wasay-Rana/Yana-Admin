@@ -11,7 +11,6 @@ import LoginPage from './components/loginPage/LoginPage';
 import Reviews from './pages/reviews/Reviews';
 import SplashScreen from './components/splashScreen/SplashScreen';
 import Vendor from './pages/vendor/Vendor';
-
 import './global.css';
 
 function App() {
