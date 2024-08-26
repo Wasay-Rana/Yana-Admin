@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import CustomerList from '../components/CustomerList';
-import ImportFileModal from '../components/ImportFileModal';
-import ClientDetailsForm from '../components/ClientDetailsForm.js';
+import CustomerList from '../components/CustomerList.jsx';
+import ImportFileModal from '../components/ImportFileModal.jsx';
+import ClientDetailsForm from '../components/ClientDetailsForm.jsx';
 import '../styles/customers.css';
 
 const Customers = () => {
