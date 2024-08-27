@@ -5,7 +5,7 @@ import { BiChevronsLeft } from 'react-icons/bi';
 
 import logo from '../../assets/yanaLogo.png';
 import logoCollapsed from '../../assets/mainLogo.png'; // Add this line for the collapsed logo
-import AddMenuButton from '../../elements/addMenuButton/addMenuButton';
+import AddMenuButton from '../../elements/addMenuButton/AddMenuButton';
 
 import './sidebar.css';
 
