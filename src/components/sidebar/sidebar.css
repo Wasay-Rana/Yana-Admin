@@ -1,188 +1,133 @@
 .sidebar {
-    width: 250px;
-    background-color: #ffffff;
-    height: 100vh;
-    padding: 20px;
-    transition: width 0.3s ease-in-out;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .sidebar.collapsed {
-    width: 80px;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .logo img {
-    width: 120px;
-    height: 60px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .logo span {
-    font-weight: bold;
-    font-size: 20px;
-    opacity: 1;
-    transition: all 0.3s ease-in-out;
-    white-space: nowrap;
-  }
-  
-  .sidebar.collapsed .logo span {
-    opacity: 0;
-  }
-  
-  .sidebar.collapsed .logo img {
-    width: 50px; /* Adjust according to your logo design */
-    height: 50px; /* Adjust according to your logo design */
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav ul li {
-    margin-bottom: 15px;
-    position: relative;
-  }
-  
-  nav ul li a {
-    display: flex;
-    align-items: center;
-    color: #333;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 20px;
-    transition: all 0.3s ease-in-out;
-    border-radius: 8px;
-  }
-  
-  nav ul li a svg {
-    margin-right: 15px;
-    font-size: 20px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .sidebar.collapsed nav ul li a {
-    justify-content: center;
-    padding: 10px;
-  }
-  
-  .sidebar.collapsed nav ul li a svg {
-    margin-right: 0;
-  }
-  
-  .sidebar.collapsed nav ul li a span {
-    display: none;
-  }
-  
-  nav ul li.active a {
-    color: #D61125;
-    font-weight: bold;
-    background-color: #ffe6e9;
-    position: relative;
-  }
-  
-  nav ul li.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 5px;
-    background-color: #D61125;
-    border-radius: 5px 0 0 5px;
-  }
-  
-  .toggle-btn {
-    position: absolute;
-    top: 20px;
-    right: -15px;
-    background-color: #D61125;
-    color: #fff;
-    border: none;
-    padding: 5px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .sidebar.collapsed .toggle-btn {
-    transform: rotate(180deg);
-  }
-  
-  .footer {
-    padding: 20px;
-    font-size: 12px;
-    text-align: center;
-    color: #999;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .footer p {
-    margin: 5px 0;
-  }
-  
-  .footer .add-menu-btn {
-    background-color: #D61125;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin-top: 15px;
-  }
-  
-  .footer .add-menu-btn svg {
-    margin-right: 8px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .sidebar.collapsed .footer {
-    padding: 10px 0;
-  }
-  
-  .sidebar.collapsed .footer p {
-    display: none;
-  }
-  
-  
-  /* Style the button */
-  .add-menu-button {
-    background-color: transparent; /* Remove default button background */
-    border: none; /* Remove default button border */
-    cursor: pointer; /* Change cursor to pointer */
-    padding: 0; /* Remove default padding */
-    margin-top: 0px; /* Adjust the top margin */
-    margin-left: 0px; /* Adjust the left margin */
-  
-  }
-  
-  /* Style the image inside the button */
-  .add-menu-button img {
-    width: 210px; /* Set the width of the image */
-    height: 119px; /* Set the height of the image */
-    transition: transform 0.3s; /* Add a transition effect */
-  }
-  
-  /* Add a hover effect */
-  .add-menu-button:hover img {
-    transform: scale(1.1); /* Scale the image on hover */
-  }
-  
-  .sidebar.collapsed .add-menu-button img {
-    display: none;
-  }
+  width: 250px;
+  background-color: #ffffff;
+  height: 100vh;
+  padding: 20px;
+  transition: width 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar.collapsed {
+  padding: 20px 0px;
+  width: 80px; 
+}
+
+.logo img {
+  width: 170%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  margin-left: 0px;
+}
+
+.collapsed .logo img {
+  width: 100%;
+  height: 50%;
+  margin-top: 10px;
+}
+
+
+.logo-btn {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .logo-btn {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  transition: 0.3s ease-in-out;
+}
+
+.toggle-btn {
+  cursor: pointer;
+}
+
+.sidebar.collapsed .toggle-btn {
+  transform: rotate(180deg);
+}
+
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+nav ul li a svg {
+  margin-right: 15px;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar.collapsed nav ul li a {
+  justify-content: center;
+  padding: 10px;
+}
+
+.sidebar.collapsed nav ul li a svg {
+  margin-right: 0;
+}
+
+.sidebar.collapsed nav ul li a span {
+  display: none;
+}
+
+nav ul li.active a {
+  color: #D61125;
+  font-weight: bold;
+  background-color: #ffe6e9;
+  position: relative;
+}
+
+nav ul li.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #D61125;
+  border-radius: 5px 0 0 5px;
+}
+
+.footer {
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #999;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.sidebar.collapsed .footer {
+  padding: 10px 0;
+}
+
+.sidebar.collapsed .footer p {
+  display: none;
+}

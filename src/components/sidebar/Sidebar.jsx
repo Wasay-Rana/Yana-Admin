@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaHome, FaUserAlt, FaChartLine, FaComments, FaCalendarAlt, FaWrench, FaCommentAlt, FaBars } from 'react-icons/fa';
+import { FaHome, FaUserAlt, FaChartLine, FaComments, FaCalendarAlt, FaWrench, FaCommentAlt } from 'react-icons/fa';
+import { BiChevronsLeft } from 'react-icons/bi';
 
-import logo from '../../assets/logo.png';
-import menubtn from '../../assets/menu_button.png'; 
+import logo from '../../assets/yanaLogo.png';
+import logoCollapsed from '../../assets/mainLogo.png'; // Add this line for the collapsed logo
+import AddMenuButton from '../../elements/addMenuButton/addMenuButton';
 
 import './sidebar.css';
-
 
 function handleAddMenuClick() {
   // Your click handling logic here
 }
+
 function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -20,13 +22,17 @@ function Sidebar() {
 
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
-      <button className="toggle-btn" onClick={toggleSidebar}>
-        <FaBars />
-      </button>
-      <div className="logo">
-        <img src={logo} alt="YANA Logo" />
-        {/* <span></span> */}
+      <div className='logo-btn'>
+
+        <div className="logo">
+          <img src={isCollapsed ? logoCollapsed : logo} alt="YANA Logo" />
+        </div>
+        <div className="toggle-btn" onClick={toggleSidebar}>
+        <BiChevronsLeft size={isCollapsed ? 20 : 28} color="#d61125" />
+        </div>
+
       </div>
+
       <nav>
         <ul>
           <li>
@@ -56,15 +62,10 @@ function Sidebar() {
         </ul>
       </nav>
       <div className="footer">
-        {/* <div className="add-menu-btn">
-          <FaWrench />
-          <span>Add Menus</span>
-        </div> */}
 
+        {/* <AddMenuButton onClick={handleAddMenuClick} /> */}
+        <AddMenuButton isCollapsed={isCollapsed} onClick={handleAddMenuClick} />
 
-        <button className="add-menu-button" onClick={handleAddMenuClick}>
-          <img src={menubtn} alt="Add Menu" />
-        </button>
         {/* <h3>Yana Medical Admin Dashboard</h3>
         <h4>© 2024 All Rights Reserved</h4>
         <h6>Made By Yana Designer Team.</h6> */}
