@@ -1,35 +1,115 @@
-/* I have commeneted this in js file, as i will see what have to do about overflows
-/* Container for the form */
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  
-  /* Form rows */
-  .form-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  /* Form inputs */
-  .form-row input,
-  .form-container input {
-    flex: 1;
-    min-width: 0;
-    margin: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  /* Ensure inputs don't overflow */
-  input[type="text"],
-  input[type="email"] {
-    max-width: 100%;
-  }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.client-details-form {
+  font-family: Arial, sans-serif;
+}
+
+.client-details-form h2, .client-details-form h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cpt-code-group {
+  display: flex;
+  gap: 5px;
+}
+
+.cpt-code-group button {
+  flex: 1;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cpt-code-group button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.meal-options {
+  display: flex;
+  gap: 20px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #f44336;
+  color: white;
+}
+
+.three-columns {
+  display: flex;
+  gap: 10px;
+}
+
+.three-columns .form-group {
+  flex: 1;
+}
