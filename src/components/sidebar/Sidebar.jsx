@@ -4,7 +4,7 @@ import { FaHome, FaUserAlt, FaChartLine, FaComments, FaCalendarAlt, FaWrench, Fa
 import { BiChevronsLeft } from 'react-icons/bi';
 
 import logo from '../../assets/yanaLogo.png';
-import logoCollapsed from '../../assets/mainLogo.png'; // Add this line for the collapsed logo
+import logoCollapsed from '../../assets/mainLogo.png';
 import AddMenuButton from '../../elements/addMenuButton/AddMenuButton';
 
 import './sidebar.css';
