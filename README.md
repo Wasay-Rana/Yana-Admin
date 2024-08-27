@@ -1,8 +1,25 @@
-# React + Vite
+# Yana Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based admin dashboard application built using Vite. It provides a modern and fast development environment with Hot Module Replacement (HMR) and optimized build performance.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A fast build tool and development server.
+- **React Simple Maps**: A library for creating SVG maps in React.
+- **Recharts**: A composable charting library built on React components.
+- **React Icons**: A collection of popular icons for React.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/yana-admin-dashboard.git
+   cd yana-admin-dashboard
