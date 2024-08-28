@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Vendor.css';
+import './vendor.css';
 
 const Vendor = () => {
   const [vendors, setVendors] = useState([]);

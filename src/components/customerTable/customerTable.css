@@ -38,22 +38,30 @@
     background-color: #f8f8f8;
   }
   
-  .status {
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-  }
   
-  .status.active {
-    background-color: #00b37e;
-    color: #0f4e3b;
-  }
-  
-  .status.inactive {
-    background-color: rgb(226, 15, 15);
-    color: #ff4d4f;
-  }
-  
+  .customer-table .status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  display: block; 
+  width: 100px; 
+  text-align: center; 
+}
+
+.customer-table .status.active {
+  background-color: #a6e7d8;
+  color: #008767;
+  font-weight: 500;
+  border: 1px solid #008767;
+}
+
+.customer-table .status.inactive {
+  background-color: #ffc5c5;
+  color: #df0404;
+  font-weight: 500;
+  border: 1px solid #df0404;
+}
+
   .pagination {
     display: flex;
     justify-content: space-between;
@@ -70,3 +78,13 @@
     color: hsl(39, 100%, 63%);
     font-weight: bold;
   }
+
+
+  .table-header h5 {
+    color: #16c098;
+    font-weight: 500;
+  }
+
+  .search-bar {
+    width: 200px;
+  } 

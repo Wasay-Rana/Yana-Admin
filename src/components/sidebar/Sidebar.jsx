@@ -23,7 +23,7 @@ function Sidebar() {
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       <div className='logo-btn'>
-
+  
         <div className="logo">
           <img src={isCollapsed ? logoCollapsed : logo} alt="YANA Logo" />
         </div>

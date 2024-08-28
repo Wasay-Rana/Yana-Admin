@@ -1,5 +1,11 @@
 import React from 'react';
 import { FaMoneyBillAlt, FaShoppingCart, FaUserFriends, FaChartLine } from 'react-icons/fa';
+import IconActiveUsers from "../../assets/customIcons/IconActiveUsers.svg";
+import IconCancelled from "../../assets/customIcons/IconCancelled.svg";
+import IconDelivered from "../../assets/customIcons/IconDelivered.svg";
+import IconRevenue from "../../assets/customIcons/IconRevenue.svg";
+
+
 import CustomerTable from '../../components/customerTable/CustomerTable';
 import './dashboard.css';
 
@@ -19,7 +25,7 @@ function Dashboard() {
       <div className="dashboard-stats">
         <div className="stat-card">
           <div className="stat-icon">
-            <FaMoneyBillAlt />
+            <img src={IconActiveUsers} alt="Icon Active Users" />
           </div>
           <div className="stat-info">
             <h3>$128K</h3>
@@ -28,7 +34,7 @@ function Dashboard() {
         </div>
         <div className="stat-card">
           <div className="stat-icon">
-            <FaShoppingCart />
+          <img src={IconDelivered} alt="Icon Delivered" />
           </div>
           <div className="stat-info">
             <h3>357</h3>
@@ -37,16 +43,17 @@ function Dashboard() {
         </div>
         <div className="stat-card">
           <div className="stat-icon">
-            <FaUserFriends />
+          <img src={IconCancelled} alt="Icon Cancelled" />
           </div>
           <div className="stat-info">
             <h3>75</h3>
             <p>Total Customers</p>
           </div>
+          
         </div>
         <div className="stat-card">
           <div className="stat-icon">
-            <FaChartLine />
+          <img src={IconRevenue} alt="Icon Revenue" />
           </div>
           <div className="stat-info">
             <h3>65</h3>
