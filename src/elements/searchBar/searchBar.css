@@ -1,0 +1,26 @@
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-bar .search-icon {
+    position: absolute;
+    right: 10px; 
+    display: flex;
+    align-items: center;
+    pointer-events: none; 
+  }
+  
+  .search-bar .search-icon svg {
+    color: #aaa;
+  }
+  

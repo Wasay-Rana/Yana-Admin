@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SearchBar from '../../elements/searchBar/SearchBar';
+
 import './customerTable.css';
 
 
@@ -7,9 +9,13 @@ function CustomerTable({ customers }) {
   return (
     <div className="customer-table">
       <div className="table-header">
+        <div className='htext'>
         <h2>All Customers</h2>
+        <h5>Active Members</h5>
+        </div>
         <div className="table-actions">
-          <input type="text" placeholder="Search" />
+        < SearchBar />
+          
           <select>
             <option value="newest">Sort by: Newest</option>
             <option value="oldest">Sort by: Oldest</option>
