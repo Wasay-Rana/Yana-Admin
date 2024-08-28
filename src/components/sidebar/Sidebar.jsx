@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { FaHome, FaUserAlt, FaChartLine, FaComments, FaCalendarAlt, FaWrench, FaCommentAlt } from 'react-icons/fa';
 import { BiChevronsLeft } from 'react-icons/bi';
+import { FaHome, FaUserAlt, FaChartLine, FaComments, FaCalendarAlt, FaWrench, FaCommentAlt } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 import logo from '../../assets/yanaLogo.png';
 import logoCollapsed from '../../assets/mainLogo.png';
