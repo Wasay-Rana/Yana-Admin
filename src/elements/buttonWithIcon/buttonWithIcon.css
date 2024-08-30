@@ -1,0 +1,22 @@
+.button-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    padding: 8px 10x;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    gap: 10px;
+  }
+  
+  .button-with-icon .icon {
+    font-size: 1rem;
+    align-items: center;
+  }
+  
+  .button-with-icon .text {
+    font-size: 1rem;
+  }
+  

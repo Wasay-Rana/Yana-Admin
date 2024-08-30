@@ -1,133 +1,79 @@
 .customers-page {
-    padding: 20px;
-  }
-  
-  .customers-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .customer-actions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .btn-primary {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .btn-secondary {
-    background-color: #008CBA;
-    color: white;
-  }
-  
-  .btn-danger {
-    background-color: #f44336;
-    color: white;
-  }
-  
-  .btn-edit {
-    background-color: #FF9800;
-    color: white;
-  }
-  
-  .customer-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .customer-table th,
-  .customer-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .status-badge {
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-  }
-  
-  .status-badge.active {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .status-badge.inactive {
-    background-color: #f44336;
-    color: white;
-  }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .file-upload-area {
-    border: 2px dashed #ddd;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .file-info {
-    margin-bottom: 20px;
-  }
-  
-  .file-info progress {
-    width: 100%;
-  }
-  
-  .modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-  }
-  
-  .client-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .form-row {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .form-row input,
-  .form-row select {
-    flex: 1;
-  }
-  
-  .form-actions {
-    margin-top: 20px;
-    text-align: right;
-  }
+  padding: 20px;
+}
+
+.customers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.customer-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.customer-actions .button-with-icon {
+  padding: 8px 10px;
+  border-radius: 18px;
+}
+
+.customer-actions .primary {
+  background-color: #008767;
+  color: white;
+}
+
+.customer-actions .secondary {
+  background-color: #0e6d99;
+  color: white;
+}
+
+.customer-actions .danger {
+  background-color: #d61125;
+  color: white;
+}
+
+
+.file-upload-area {
+  border: 2px dashed #ddd;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.file-info {
+  margin-bottom: 20px;
+}
+
+.file-info progress {
+  width: 100%;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Client form styles */
+.client-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+}
+
+.form-actions {
+  margin-top: 20px;
+  text-align: right;
+}

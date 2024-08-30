@@ -47,13 +47,18 @@
   }
   
   .status.active {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: #a6e7d8;
+    color: #008767;
+    font-weight: 500;
+    border: 1px solid #008767;
   }
+ 
   
   .status.inactive {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: #ffc5c5;
+    color: #df0404;
+    font-weight: 500;
+    border: 1px solid #df0404;
   }
   
   .edit-button {

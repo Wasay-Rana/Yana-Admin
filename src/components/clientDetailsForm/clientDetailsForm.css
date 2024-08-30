@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -15,29 +17,42 @@
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  max-width: 600px;
-  width: 100%;
   max-height: 90vh;
   overflow-y: auto;
 }
 
 .client-details-form {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-.client-details-form h2, .client-details-form h3 {
-  color: #333;
+.client-details-form h2 {
+  color: #959595;
   margin-bottom: 15px;
 }
 
 .form-row {
   display: flex;
+  flex: 1;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 15px;
+  width: 100%; /* Ensure all form rows have the same width */
+}
+
+.form-row#top-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+  gap: 20rem
 }
 
 .form-group {
-  flex: 1;
+  flex: 1; /* Allow form groups to grow and fill available space */
+  min-width: 150px; /* Set a minimum width to keep inputs manageable */
+}
+
+.custom-input {
+  width: 100%; /* Inputs should grow to fill their form group's width */
 }
 
 label {
@@ -54,6 +69,7 @@ input[type="date"] {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding is included in the total width */
 }
 
 .cpt-code-group {
@@ -71,14 +87,36 @@ input[type="date"] {
 }
 
 .cpt-code-group button.active {
-  background-color: #007bff;
+  background-color: #0E6D99;
   color: #fff;
 }
 
 .meal-options {
   display: flex;
   gap: 20px;
+  font-size: large;
 }
+
+.meal-options {
+  display: flex; /* Aligns meal options horizontally */
+  gap: 20px; /* Adds space between meal options */
+  font-size: large; /* Sets a large font size for better readability */
+}
+
+.meal-options input[type="checkbox"] {
+  width: 20px; /* Increases the width of the checkbox */
+  height: 20px; /* Increases the height of the checkbox */
+  transform: scale(1); /* Scales the checkbox size */
+  margin-right: 10px; /* Adds space between the checkbox and label text */
+  accent-color: #0E6D99; /* Changes the checkbox color when checked */
+}
+
+.meal-options label {
+  display: flex;
+  align-items: center; /* Centers the checkbox and label text vertically */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
 
 .form-actions {
   display: flex;
@@ -96,20 +134,22 @@ input[type="date"] {
 }
 
 .btn-primary {
-  background-color: #4CAF50;
+  background-color: #0E6D99;
   color: white;
 }
 
 .btn-secondary {
-  background-color: #f44336;
-  color: white;
+  background-color: #CDCDCD;
+  color: rgb(0, 0, 0);
 }
 
 .three-columns {
   display: flex;
   gap: 10px;
+  width: 100%;
 }
 
 .three-columns .form-group {
   flex: 1;
+  min-width: 150px;
 }
