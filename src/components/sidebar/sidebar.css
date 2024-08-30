@@ -33,29 +33,29 @@
 .logo-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 60px;
   transition: margin-left 0.3s ease-in-out;
   margin-bottom: 3rem;
 }
 
 .sidebar.collapsed .logo-btn {
-  display: flex;
-  align-items: center;
-  gap: 0px;
-  transition: 0.3s ease-in-out;
-  margin-bottom: 0rem;
-
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 60%;
 }
+
 
 .toggle-btn {
   cursor: pointer;
 }
 
 .sidebar.collapsed .toggle-btn {
-  transform: rotate(180deg);
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
 }
-
-
 
 nav ul {
   list-style-type: none;

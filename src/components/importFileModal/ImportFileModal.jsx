@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './importFileModal.module.css'
 
 const ImportFileModal = ({ onClose }) => {
   const [file, setFile] = useState(null);
@@ -28,8 +29,8 @@ const ImportFileModal = ({ onClose }) => {
           </div>
         )}
         <div className="modal-actions">
-          <button className="btn btn-primary" onClick={handleImport}>Import File</button>
           <button className="btn btn-secondary" onClick={onClose}>Cancel</button>
+          <button className="btn btn-primary" onClick={handleImport}>Import File</button>
         </div>
       </div>
     </div>

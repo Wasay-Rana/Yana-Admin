@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-
+import { FaPlus, FaFileImport, FaDownload } from 'react-icons/fa';
+import ButtonWithIcon from '../../elements/buttonWithIcon/ButtonWithIcon.jsx';
 import ClientDetailsForm from '../../components/clientDetailsForm/ClientDetailsForm.jsx';
 import CustomerList from '../../components/customerList/CustomerList.jsx';
 import ImportFileModal from '../../components/importFileModal/ImportFileModal.jsx';
-
 import './customers.css';
 
 const Customers = () => {
@@ -15,13 +15,26 @@ const Customers = () => {
       <div className="customers-header">
         <h1>All Customers</h1>
         <div className="customer-actions">
-          <button className="btn btn-primary" onClick={() => setShowClientForm(true)}>
-            Add Customer
-          </button>
-          <button className="btn btn-secondary" onClick={() => setShowImportModal(true)}>
-            Import File
-          </button>
-          <button className="btn btn-danger">Download</button>
+          <ButtonWithIcon 
+            onClick={() => setShowClientForm(true)}
+            icon={<FaPlus />}
+            text="Add Customer"
+            className="primary"
+          />
+
+          <ButtonWithIcon 
+            onClick={() => setShowImportModal(true)}
+            icon={<FaFileImport />}
+            text="Import File"
+            className="secondary"
+          />
+
+          <ButtonWithIcon 
+            onClick={() => { /* handle download */ }}
+            icon={<FaDownload />}
+            text="Download"
+            className="danger"
+          />
         </div>
       </div>
       <CustomerList />

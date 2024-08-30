@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './customerList.css';
+
 const CustomerList = () => {
   const customers = [
     { id: 1, name: 'Jane Cooper', insurance: 'Nextleet', phone: '(225) 555-0118', email: 'jane@microsoft.com', meals: 14, status: 'Active' },

@@ -77,7 +77,7 @@
   margin-bottom: 15px;
 }
 
-.form-row > * {
+.add-meal-form .form-row > * {
   flex: 1;
 }
 
