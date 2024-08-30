@@ -1,9 +1,18 @@
-// Sidebar.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { BiChevronsLeft } from 'react-icons/bi';
-import { FaHome, FaUserAlt, FaChartLine, FaComments, FaCalendarAlt, FaWrench, FaCommentAlt } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
+
+import { BiChevronsLeft } from 'react-icons/bi';
+
+import { GoHome } from "react-icons/go";
+import { VscListSelection } from "react-icons/vsc";
+import { LuUsers2 } from "react-icons/lu";
+import { BiFoodMenu } from "react-icons/bi";
+import { MdOutlineFoodBank } from "react-icons/md";
+import { FaRegChartBar } from 'react-icons/fa';
+import { RiPencilLine } from "react-icons/ri";
+import { BsChatLeftDots } from "react-icons/bs";
+
 
 import logo from '../../assets/yanaLogo.png';
 import logoCollapsed from '../../assets/mainLogo.png';
@@ -43,28 +52,52 @@ function Sidebar() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" end activeClassName="active"><FaHome /><span>Dashboard</span></NavLink>
+            <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <GoHome />
+              <span>Dashboard</span>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/order" activeClassName="active"><FaUserAlt /><span>Order</span></NavLink>
+            <NavLink to="/orders" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <VscListSelection />
+              <span>Orders</span>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/customers" activeClassName="active"><FaUserAlt /><span>Customer</span></NavLink>
+            <NavLink to="/customers" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <LuUsers2 />
+              <span>Customers</span>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/analytics" activeClassName="active"><FaChartLine /><span>Analytics</span></NavLink>
+            <NavLink to="/meals" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <BiFoodMenu />
+              <span>Meals</span>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/reviews" activeClassName="active"><FaComments /><span>Reviews</span></NavLink>
+            <NavLink to="/vendors" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <MdOutlineFoodBank />
+              <span>Vendors</span>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/vendor" activeClassName="active"><FaWrench /><span>Vendor</span></NavLink>
+            <NavLink to="/analytics" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <FaRegChartBar />
+              <span>Analytics</span>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/food" activeClassName="active"><FaCalendarAlt /><span>Food</span></NavLink>
+            <NavLink to="/reviews" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <RiPencilLine />
+              <span>Reviews</span>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/chat" activeClassName="active"><FaCommentAlt /><span>Chat</span></NavLink>
+            <NavLink to="/chat" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <BsChatLeftDots />
+              <span>Chat</span>
+            </NavLink>
           </li>
         </ul>
       </nav>

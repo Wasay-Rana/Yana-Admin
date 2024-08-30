@@ -1,9 +1,9 @@
-// src/pages/Food.js
+// src/pages/Meals.js
 
 import React, { useState, useEffect } from 'react';
-import './food.css';
+import './meals.css';
 
-const Food = () => {
+const Meals = () => {
   const [meals, setMeals] = useState([]);
   const [newMeal, setNewMeal] = useState({
     title: '',
@@ -137,4 +137,4 @@ const Food = () => {
   );
 };
 
-export default Food;
+export default Meals;
