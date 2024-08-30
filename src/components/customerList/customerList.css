@@ -4,8 +4,8 @@
   background-color: #ffffff;
   border-radius: 22px;
   padding: 20px;
+  padding-bottom: 10px;
   font-family: 'Poppins', sans-serif;
-  /* Apply Poppins font */
 }
 
 .table-header {
@@ -74,15 +74,51 @@ th {
   border: 1px solid #df0404;
 }
 
-.pagination {
+.pagination-container {
   display: flex;
+  margin-top: 25px;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+  font-weight: 500;
   color: #B5B7C0;
-  font-weight: 400;
 }
 
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-info {
+  font-size: 14px;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-button {
+  color: #404B52;
+  padding: 5px 10px;
+  border: 1px solid #EEEEEE;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: 500;
+
+}
+
+.pagination-button.active {
+  background-color: #ff8c00;
+  color: white;
+  border-color: #ff8c00;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .page-numbers span {
   margin: 0 5px;
   cursor: pointer;
