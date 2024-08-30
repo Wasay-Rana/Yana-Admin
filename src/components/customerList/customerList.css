@@ -1,64 +1,87 @@
+.customer-list-container {
+  font-family: Arial, sans-serif;
+}
+
 .customer-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .customer-table th,
-  .customer-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .status-badge {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    width: 4.8rem;
-    text-align: center;
-  }
-  
-  .status-badge.active {
-    background-color: #a6e7d8;
-    color: #008767;
-    font-weight: 500;
-    border: 1px solid #008767;
-  }
-  
-  .status-badge.inactive {
-    background-color: #ffc5c5;
-    color: #df0404;
-    font-weight: 500;
-    border: 1px solid #df0404;
-  }
-  
-  .customer-table .btn-edit {
-    background-color: #FF9800;
-    color: white;
-    border: none;
-    border-radius: 24px;
-    height: 25px;
-    padding: 8px 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.1s ease, transform 0.1s ease;
-  }
-  
-  .customer-table .btn-edit:hover,
-  .customer-table .btn-edit:focus {
-    background-color: #e68900;
-    color: white;
-    outline: none;
-    transform: scale(1.05);
-  }
-  
-  /* .customer-table.btn-edit:active {
-    background-color: #d67c00;
-    transform: scale(0.98);
-  }
-   */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.customer-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status-badge.active {
+  background-color: #e6f7ed;
+  color: #00a389;
+}
+
+.status-badge.inactive {
+  background-color: #ffeaea;
+  color: #ff0000;
+}
+
+.btn-edit {
+  background-color: #ff8c00;
+  color: white;
+  border: #ff8c00;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  background-color: #aa6510; /* Set a contrasting background color */
+  color: #000; /* Set a contrasting text color */
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-info {
+  font-size: 14px;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-button {
+  padding: 5px 10px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 15px; /* Add this line to round the buttons */
+
+}
+
+.pagination-button.active {
+  background-color: #ff8c00;
+  color: white;
+  border-color: #ff8c00;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
