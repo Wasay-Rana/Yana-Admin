@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import CrossButton from '../../elements/crossButton/crossButton';
+import CustomInput from '../../elements/customInput/CustomInput'
 import './clientDetailsForm.css';
 
 const ClientDetailsForm = ({ onClose }) => {
@@ -39,13 +41,18 @@ const ClientDetailsForm = ({ onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content client-details-form">
-        <h2>Client Details</h2>
         <form onSubmit={handleSubmit}>
+          <div className="form-row" id="top-row">
+            <h2>Client Details</h2>
+            <CrossButton onClick={onClose} className='cross-btn' />
+
+
+          </div>
           <div className="form-row">
+
             <div className="form-group">
               <label htmlFor="firstName">Client Name *</label>
-              <input
-                type="text"
+              <CustomInput
                 id="firstName"
                 name="firstName"
                 placeholder="First Name"
@@ -56,8 +63,7 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
             <div className="form-group">
               <label htmlFor="lastName">&nbsp;</label>
-              <input
-                type="text"
+              <CustomInput
                 id="lastName"
                 name="lastName"
                 placeholder="Last Name"
@@ -71,8 +77,7 @@ const ClientDetailsForm = ({ onClose }) => {
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="medicaidId">Medicaid ID *</label>
-              <input
-                type="text"
+              <CustomInput
                 id="medicaidId"
                 name="medicaidId"
                 value={formData.medicaidId}
@@ -82,8 +87,7 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
             <div className="form-group">
               <label htmlFor="insuranceId">Insurance ID *</label>
-              <input
-                type="text"
+              <CustomInput
                 id="insuranceId"
                 name="insuranceId"
                 value={formData.insuranceId}
@@ -93,15 +97,18 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="email">Client Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="email">Client Email</label>
+              <CustomInput
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+            </div>
           </div>
 
           <div className="form-row">
@@ -116,8 +123,7 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
             <div className="form-group">
               <label htmlFor="icd10Code">ICD-10 Code *</label>
-              <input
-                type="text"
+              <CustomInput
                 id="icd10Code"
                 name="icd10Code"
                 value={formData.icd10Code}
@@ -130,7 +136,7 @@ const ClientDetailsForm = ({ onClose }) => {
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="authorizationStartDate">Authorization Date *</label>
-              <input
+              <CustomInput
                 type="date"
                 id="authorizationStartDate"
                 name="authorizationStartDate"
@@ -141,7 +147,7 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
             <div className="form-group">
               <label htmlFor="authorizationEndDate">&nbsp;</label>
-              <input
+              <CustomInput
                 type="date"
                 id="authorizationEndDate"
                 name="authorizationEndDate"
@@ -152,22 +158,24 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="allergies">Allergies *</label>
-            <input
-              type="text"
-              id="allergies"
-              name="allergies"
-              value={formData.allergies}
-              onChange={handleInputChange}
-              required
-            />
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="allergies">Allergies *</label>
+              <CustomInput
+                type="text"
+                id="allergies"
+                name="allergies"
+                value={formData.allergies}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
           </div>
 
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="street">Client Address *</label>
-              <input
+              <CustomInput
                 type="text"
                 id="street"
                 name="street"
@@ -179,7 +187,7 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
             <div className="form-group">
               <label htmlFor="address">&nbsp;</label>
-              <input
+              <CustomInput
                 type="text"
                 id="address"
                 name="address"
@@ -192,7 +200,7 @@ const ClientDetailsForm = ({ onClose }) => {
 
           <div className="form-row three-columns">
             <div className="form-group">
-              <input
+              <CustomInput
                 type="text"
                 id="city"
                 name="city"
@@ -203,7 +211,7 @@ const ClientDetailsForm = ({ onClose }) => {
               />
             </div>
             <div className="form-group">
-              <input
+              <CustomInput
                 type="text"
                 id="state"
                 name="state"
@@ -214,7 +222,7 @@ const ClientDetailsForm = ({ onClose }) => {
               />
             </div>
             <div className="form-group">
-              <input
+              <CustomInput
                 type="text"
                 id="zipCode"
                 name="zipCode"
@@ -226,38 +234,44 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
           </div>
 
-          <div className="form-group">
-            <label>No. Of Meals *</label>
-            <div className="meal-options">
-              <label>
-                <input
-                  type="radio"
-                  name="meals"
-                  value="7"
-                  checked={formData.meals === '7'}
-                  onChange={handleInputChange}
-                />
-                7 meals
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="meals"
-                  value="14"
-                  checked={formData.meals === '14'}
-                  onChange={handleInputChange}
-                />
-                14 meals
-              </label>
+          <div className="form-row">
+
+            <div className="form-group">
+              <label>No. Of Meals *</label>
+              <div className="meal-options">
+                <label>
+
+                  <input
+                    type="checkbox"
+                    name="meals"
+                    value="7"
+                    checked={formData.meals === '7'}
+                    onChange={handleInputChange}
+                  />
+                  7 meals
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="meals"
+                    value="14"
+                    checked={formData.meals === '14'}
+                    onChange={handleInputChange}
+                  />
+                  14 meals
+                </label>
+              </div>
             </div>
           </div>
 
-          <h3>Alternate Contact</h3>
+          <div className="form-row">
+            <h2>Alternate Contact</h2>
+          </div>
 
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="contactFirstName">Contact Name *</label>
-              <input
+              <CustomInput
                 type="text"
                 id="contactFirstName"
                 name="contactFirstName"
@@ -269,28 +283,30 @@ const ClientDetailsForm = ({ onClose }) => {
             </div>
             <div className="form-group">
               <label htmlFor="contactLastName">&nbsp;</label>
-              <input
+              <CustomInput
                 type="text"
-                id="contactLastName"
-                name="contactLastName"
-                placeholder="Last Name"
-                value={formData.contactLastName}
+                id="contactFirstName"
+                name="contactFirstName"
+                placeholder="First Name"
+                value={formData.contactFirstName}
                 onChange={handleInputChange}
                 required
               />
             </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="phoneNumber">Phone Number *</label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
-              required
-            />
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="phoneNumber">Phone Number *</label>
+              <CustomInput
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
           </div>
 
           <div className="form-actions">

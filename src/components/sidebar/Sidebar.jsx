@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+// Sidebar.jsx
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { BiChevronsLeft } from 'react-icons/bi';
 import { FaHome, FaUserAlt, FaChartLine, FaComments, FaCalendarAlt, FaWrench, FaCommentAlt } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
@@ -6,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/yanaLogo.png';
 import logoCollapsed from '../../assets/mainLogo.png';
 import AddMenuButton from '../../elements/addMenuButton/AddMenuButton';
+import { toggleSidebar } from './SidebarSlice.jsx';
 
 import './sidebar.css';
 
@@ -14,23 +17,27 @@ function handleAddMenuClick() {
 }
 
 function Sidebar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const isCollapsed = useSelector((state) => state.sidebar.isCollapsed);
+  const dispatch = useDispatch();
 
-  const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
+  const toggleSidebarState = () => {
+    dispatch(toggleSidebar());
   };
 
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
-      <div className='logo-btn'>
-  
+      <div className="logo-btn">
         <div className="logo">
-          <img src={isCollapsed ? logoCollapsed : logo} alt="YANA Logo" />
-        </div>
-        <div className="toggle-btn" onClick={toggleSidebar}>
-        <BiChevronsLeft size={isCollapsed ? 20 : 28} color="#d61125" />
+          {!isCollapsed && <img src={logo} alt="YANA Logo" />}
         </div>
 
+        <div className="toggle-btn" onClick={toggleSidebarState}>
+          {isCollapsed ? (
+            <img src={logoCollapsed} alt="Collapsed Logo" style={{ width: 44, height: 44 }} />
+          ) : (
+            <BiChevronsLeft size={28} color="#d61125" />
+          )}
+        </div>
       </div>
 
       <nav>
@@ -61,14 +68,9 @@ function Sidebar() {
           </li>
         </ul>
       </nav>
+
       <div className="footer">
-
-        {/* <AddMenuButton onClick={handleAddMenuClick} /> */}
         <AddMenuButton isCollapsed={isCollapsed} onClick={handleAddMenuClick} />
-
-        {/* <h3>Yana Medical Admin Dashboard</h3>
-        <h4>© 2024 All Rights Reserved</h4>
-        <h6>Made By Yana Designer Team.</h6> */}
       </div>
     </div>
   );

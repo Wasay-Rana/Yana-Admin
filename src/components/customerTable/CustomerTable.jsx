@@ -17,8 +17,8 @@ function CustomerTable({ customers }) {
         < SearchBar />
           
           <select>
-            <option value="newest">Sort by: Newest</option>
-            <option value="oldest">Sort by: Oldest</option>
+            <option value="newest">Sort by: Newest </option>
+            <option value="oldest">Sort by: Oldest </option>
           </select>
         </div>
       </div>

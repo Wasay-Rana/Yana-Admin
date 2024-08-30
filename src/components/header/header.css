@@ -1,73 +1,79 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    /* background-color: #EEEEEE; */
-    margin-bottom: 20px;
-  }
-  
-  .search-bar input {
-    padding: 10px;
-    width: 950px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .user-actions {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  /* Flex container */
+  display: flex;
+}
 
-  .profile-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.7rem;
-  }
+.search-bar {
+  flex-grow: 1; /* Allow to expand to fill available space */
+  transition: width 0.3s ease; /* Smooth transition for width change */
+}
 
-  .profile-info p {
-    font-size: 1.25rem;
-  }
+.search-bar input {
+  padding: 10px;
+  width: 100%; /* Take full width of the .search-bar container */
+  border: none;
+  border-radius: 5px;
+  height: 3rem;
+}
 
-  .profile-info span{
-    font-weight: 500;
-  }
-  
-  .notifications {
-    position: relative;
-    margin-right: 10px;
-    padding: 0.5rem;
-    border-radius: 0.9rem;
-    background-color: rgba(45, 156, 219, 0.15);
-  }
+.user-actions {
+  display: flex;
+  align-items: center;
+}
 
-  .chat-icon {
-    position: relative;
-    margin-right: 20px;
-    padding: 0.5rem;
-    border-radius: 0.9rem;
-    background-color: rgba(45, 156, 219, 0.15);
+.profile-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
 
-  }
-  
-  .notification-count {
-    position: absolute;
-    top: -12px;
-    right: -5px;
-    background-color: #0E6D99;
-    color: #ffffff;
-    font-size: 12px;
-    padding: 2px 5px;
-    border-radius: 50%;
-    border: 3px solid white;
-  }
-  
-  .user-profile {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-profile svg {
-    margin-right: 10px;
-  }
+.profile-info p {
+  font-size: 1.25rem;
+}
+
+.profile-info span {
+  font-weight: 500;
+}
+
+.notifications {
+  position: relative;
+  margin-right: 10px;
+  padding: 0.5rem;
+  border-radius: 0.9rem;
+  background-color: rgba(45, 156, 219, 0.15);
+}
+
+.chat-icon {
+  position: relative;
+  margin-right: 20px;
+  padding: 0.5rem;
+  border-radius: 0.9rem;
+  background-color: rgba(45, 156, 219, 0.15);
+}
+
+.notification-count {
+  position: absolute;
+  top: -12px;
+  right: -5px;
+  background-color: #0E6D99;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile svg {
+  margin-right: 10px;
+}
