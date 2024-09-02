@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CrossButton from '../../elements/crossButton/crossButton';
+import CrossButton from '../../elements/crossButton/CrossButton';
 import CustomInput from '../../elements/customInput/CustomInput';
 import './clientDetailsForm.css';
 

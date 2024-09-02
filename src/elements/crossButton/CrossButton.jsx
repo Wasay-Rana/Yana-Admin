@@ -1,5 +1,5 @@
 import React from 'react';
-import './CrossButton.css'; // Import the CSS for styling
+import './crossButton.css'; // Import the CSS for styling
 
 const CrossButton = ({ onClick, className = '', ...props }) => {
   return (
