@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 .customer-list {
   background-color: #ffffff;
@@ -40,7 +40,7 @@ table {
 
 th,
 td {
-  text-align: left;
+  text-align: center;
   padding: 12px;
   border-bottom: 1px solid #ddd;
 }
@@ -52,26 +52,52 @@ th {
 
 
 .customer-list .status {
-  padding: 5px 10px;
+  padding: 5px 10px; 
   border-radius: 20px;
   font-size: 0.9em;
-  display: block;
-  width: 4.8rem;
+  min-width: 5.5rem; 
   text-align: center;
+  vertical-align: middle; 
+  display: inline-block;
 }
 
-.customer-list .status.active {
+.customer-list .status.approved {
   background-color: #a6e7d8;
   color: #008767;
   font-weight: 500;
   border: 1px solid #008767;
 }
 
-.customer-list .status.inactive {
+.customer-list .status.pending {
   background-color: #ffc5c5;
   color: #df0404;
   font-weight: 500;
   border: 1px solid #df0404;
+}
+
+.request-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.status-icon {
+    margin-right: 5px;
+    color: #fe8c00;
+    font-size: 24px;
+}
+
+.customer-list .edit-btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.customer-list .edit-btns button {
+    border: none;
+    background-color: transparent;
+    color: #6e6e6e;
+    font-size: 19px;
 }
 
 .pagination-container {
@@ -186,3 +212,4 @@ th {
   transform: scale(0.98);
 }
   */
+  

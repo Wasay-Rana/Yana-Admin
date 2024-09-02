@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './importFileModal.module.css'
+import './importFileModal.css'
 
 const ImportFileModal = ({ onClose }) => {
   const [file, setFile] = useState(null);
@@ -15,8 +15,8 @@ const ImportFileModal = ({ onClose }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className="modal-overlay-import">
+      <div className="modal-content-import">
         <h2>Import File</h2>
         <div className="file-upload-area">
           <input type="file" onChange={handleFileChange} accept=".xlsx,.xls,.csv" />
@@ -25,7 +25,6 @@ const ImportFileModal = ({ onClose }) => {
         {file && (
           <div className="file-info">
             <p>{file.name}</p>
-            <progress value="70" max="100"></progress>
           </div>
         )}
         <div className="modal-actions">

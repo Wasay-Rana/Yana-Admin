@@ -38,7 +38,7 @@
 
  
  th, td {
-    text-align: left;
+    text-align: center;
     padding: 12px;
     border-bottom: 1px solid #ddd;
   }
@@ -50,13 +50,15 @@
   
   
   .customer-table .status {
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.9em;
-  display: block; 
-  width: 4.8rem; 
-  text-align: center; 
+    padding: 5px 10px;  /* Adjusted for better spacing */
+    border-radius: 20px;
+    font-size: 0.9em;
+    min-width: 4.9rem;  /* Removed fixed width */
+    text-align: center;
+    vertical-align: middle;  /* Centers text vertically in table cell */
+    display: inline-block;  /* Ensures the element respects padding */
 }
+
 
 .customer-table .status.active {
   background-color: #a6e7d8;

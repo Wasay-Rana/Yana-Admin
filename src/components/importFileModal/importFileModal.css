@@ -1,5 +1,5 @@
 /* Modal styles */
-.modal-overlay {
+.modal-overlay-import {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@
     align-items: center;
   }
   
-  .modal-content {
+  .modal-content-import {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
@@ -19,7 +19,7 @@
     width: 100%;
   }
 
-  .modal-actions .btn{
+  .modal-actions-import .btn{
     width: 25%;
     border-radius: 5rem;
   }

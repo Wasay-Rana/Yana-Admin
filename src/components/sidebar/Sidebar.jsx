@@ -19,6 +19,10 @@ import logoCollapsed from '../../assets/mainLogo.png';
 import AddMenuButton from '../../elements/addMenuButton/AddMenuButton';
 import { toggleSidebar } from './SidebarSlice.jsx';
 
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+
+
 import './sidebar.css';
 
 function handleAddMenuClick() {
@@ -54,7 +58,8 @@ function Sidebar() {
           <li>
             <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')}>
               <GoHome />
-              <span>Dashboard</span>
+              <span data-tooltip-id="my-tooltip" data-tooltip-content="Dashboard">Dashboard</span>
+              <Tooltip id="my-tooltip" />
             </NavLink>
           </li>
           <li>

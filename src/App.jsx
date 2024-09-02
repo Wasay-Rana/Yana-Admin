@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Analytics from './pages/analytics/Analytics';
 import Chat from './pages/chat/Chat';
 import Customers from './pages/customers/Customers';
+import ClientDetailsForm from './components/clientDetailsForm/ClientDetailsForm';
 import Dashboard from './pages/dashboard/Dashboard';
 import Meals from './pages/meal/Meals';
 import Layout from './components/layout/Layout';
@@ -23,6 +24,8 @@ function App() {
         <Route path="/dashboard" element={<PrivateRoute><Layout><Dashboard /></Layout></PrivateRoute>} />
         <Route path="/orders" element={<PrivateRoute><Layout><Order /></Layout></PrivateRoute>} />
         <Route path="/customers" element={<PrivateRoute><Layout><Customers /></Layout></PrivateRoute>} />
+        <Route path="/customers/client-details" element={<PrivateRoute><Layout><ClientDetailsForm /></Layout></PrivateRoute>} />
+
         <Route path="/meals" element={<PrivateRoute><Layout><Meals /></Layout></PrivateRoute>} />
         <Route path="/vendors" element={<PrivateRoute><Layout><Vendor /></Layout></PrivateRoute>} />
         <Route path="/analytics" element={<PrivateRoute><Layout><Analytics /></Layout></PrivateRoute>} />
