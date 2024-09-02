@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import { BiChevronsLeft } from 'react-icons/bi';
 
@@ -25,16 +25,17 @@ import { Tooltip } from 'react-tooltip'
 
 import './sidebar.css';
 
-function handleAddMenuClick() {
-  // Your click handling logic here
-}
-
 function Sidebar() {
   const isCollapsed = useSelector((state) => state.sidebar.isCollapsed);
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // When press Add Menu Button, Go to Meals Page
 
   const toggleSidebarState = () => {
     dispatch(toggleSidebar());
+  };
+  // You can change the logic as you want, just that i think the add menu button option only suits here.
+  const handleAddMenuClick=() => {
+    navigate('/meals');
   };
 
   return (
