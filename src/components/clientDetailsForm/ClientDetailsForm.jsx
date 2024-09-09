@@ -11,7 +11,7 @@ const Chat = ({ onClose }) => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
-        medicaidId: '',
+        medicalId: '',
         insuranceId: '',
         email: '',
         cptCode: 'W1784',
@@ -78,11 +78,11 @@ const Chat = ({ onClose }) => {
 
                     <div className="form-row">
                         <div className="form-group">
-                            <label htmlFor="medicaidId">Medicaid ID *</label>
+                            <label htmlFor="medicalId">medical ID *</label>
                             <CustomInput
-                                id="medicaidId"
-                                name="medicaidId"
-                                value={formData.medicaidId}
+                                id="medicalId"
+                                name="medicalId"
+                                value={formData.medicalId}
                                 onChange={handleInputChange}
                                 required
                             />

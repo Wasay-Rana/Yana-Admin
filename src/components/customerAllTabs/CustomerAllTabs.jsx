@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import SearchBar from '../../elements/searchBar/SearchBar';
 import { FiTrash2, FiEdit, FiPlusCircle } from "react-icons/fi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import './customerAllTabs.css'
-
+import './CustomerAllTabs.css';
 
 const CustomerAllTabs = () => {
     const navigate = useNavigate();
@@ -14,29 +13,14 @@ const CustomerAllTabs = () => {
     const activeInactiveCustomers = [
         { id: 1, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
         { id: 2, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-        { id: 3, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-        { id: 4, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-        { id: 5, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-        { id: 6, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-        { id: 7, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-        { id: 8, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-        { id: 9, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-        { id: 10, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-
-        // ... (add more customer data here)
+        // Ensure all IDs are unique
     ];
 
     // Data for Approved/Pending Members
     const approvedPendingMembers = [
-        { id: 1, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved', actions: '' },
-        { id: 2, member_ID: 1234567, medicaid_ID: 10101010, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending', actions: '' },
-        { id: 3, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved', actions: '' },
-        { id: 4, member_ID: 1234567, medicaid_ID: 10101010, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending', actions: '' },
-        { id: 5, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved', actions: '' },
-        { id: 6, member_ID: 1234567, medicaid_ID: 10101010, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending', actions: '' },
-        { id: 7, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved', actions: '' },
-        { id: 8, member_ID: 1234567, medicaid_ID: 10101010, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending', actions: '' },
-        // ... (add more member data here)
+        { id: 1, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved' },
+        { id: 2, member_ID: 1234568, medicaid_ID: 10101011, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending' },
+        // Ensure all IDs are unique
     ];
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -47,12 +31,7 @@ const CustomerAllTabs = () => {
     const dataToDisplay = (filterStatus === 'Active' || filterStatus === 'Inactive') ? activeInactiveCustomers : approvedPendingMembers;
 
     // Filter data based on the selected tab
-    const filteredData = dataToDisplay.filter(item => {
-        if (filterStatus === 'Active' || filterStatus === 'Inactive') {
-            return item.status === filterStatus;
-        }
-        return item.status === filterStatus;
-    });
+    const filteredData = dataToDisplay.filter(item => item.status === filterStatus);
 
     const indexOfLastCustomer = currentPage * customersPerPage;
     const indexOfFirstCustomer = indexOfLastCustomer - customersPerPage;
@@ -85,7 +64,6 @@ const CustomerAllTabs = () => {
 
     const renderTableHeaders = () => {
         if (filterStatus === 'Active' || filterStatus === 'Inactive') {
-            // Headers for Active/Inactive
             return (
                 <tr>
                     <th>Customer Name</th>
@@ -98,7 +76,6 @@ const CustomerAllTabs = () => {
                 </tr>
             );
         } else {
-            // Headers for Approved/Pending
             return (
                 <tr>
                     <th>Member ID</th>
@@ -115,7 +92,6 @@ const CustomerAllTabs = () => {
 
     const renderTableRows = () => {
         if (filterStatus === 'Active' || filterStatus === 'Inactive') {
-            // Rows for Active/Inactive Customers
             return currentData.map((customer) => (
                 <tr key={customer.id}>
                     <td>{customer.name}</td>
@@ -134,7 +110,6 @@ const CustomerAllTabs = () => {
                 </tr>
             ));
         } else {
-            // Rows for Approved/Pending Members
             return currentData.map((member) => (
                 <tr key={member.id}>
                     <td>{member.member_ID}</td>
@@ -178,7 +153,6 @@ const CustomerAllTabs = () => {
                 <div className="table-header">
                     <div className='htext'>
                         <h2>All Customers</h2>
-                        {/* Tabs for filtering Active/Inactive and Approved/Pending members */}
                         <div className="tabs">
                             <button
                                 className={`tab-button ${filterStatus === 'Active' ? 'active' : ''}`}
@@ -229,22 +203,8 @@ const CustomerAllTabs = () => {
                     <div className="pagination-info">
                         Showing data {indexOfFirstCustomer + 1} to {Math.min(indexOfLastCustomer, filteredData.length)} of {filteredData.length} entries
                     </div>
-                    <div className="pagination-controls">
-                        <button
-                            onClick={() => handlePageChange(currentPage - 1)}
-                            disabled={currentPage === 1}
-                            className="pagination-button"
-                        >
-                            &lt;
-                        </button>
+                    <div className="pagination-buttons">
                         {renderPaginationButtons()}
-                        <button
-                            onClick={() => handlePageChange(currentPage + 1)}
-                            disabled={currentPage === totalPages}
-                            className="pagination-button"
-                        >
-                            &gt;
-                        </button>
                     </div>
                 </div>
             </div>
