@@ -1,29 +1,26 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import SearchBar from '../../elements/searchBar/SearchBar';
 import { FiTrash2, FiEdit, FiPlusCircle } from "react-icons/fi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
+import './customerAllTabs.css';
 
-const Reviews = () => {
+const CustomerAllTabs = () => {
+    const navigate = useNavigate();
+
     // Data for Active/Inactive Customers
     const activeInactiveCustomers = [
-      { id: 1, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-      { id: 2, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-      { id: 3, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-      { id: 4, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-      { id: 5, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-      { id: 6, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-      { id: 7, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-      { id: 8, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-      { id: 9, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
-      { id: 10, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
-        // ... (add more customer data here)
+        { id: 1, name: 'Floyd Miles', insurance: 'Nextleet', phone: '(205) 555-0100', email: 'floyd@yahoo.com', meals: 7, status: 'Inactive' },
+        { id: 2, name: 'Robert Dawn', insurance: 'Keystone', phone: '(205) 555-0101', email: 'robert@yahoo.com', meals: 7, status: 'Active' },
+        // Ensure all IDs are unique
     ];
 
     // Data for Approved/Pending Members
     const approvedPendingMembers = [
-        { id: 1, member_ID: 1234567, medical_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved', actions: '' },
-        { id: 2, member_ID: 1234567, medical_ID: 10101010, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending', actions: '' },
-        // ... (add more member data here)
+        { id: 1, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved' },
+        { id: 2, member_ID: 1234568, medicaid_ID: 10101011, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending' },
+        // Ensure all IDs are unique
     ];
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -34,12 +31,7 @@ const Reviews = () => {
     const dataToDisplay = (filterStatus === 'Active' || filterStatus === 'Inactive') ? activeInactiveCustomers : approvedPendingMembers;
 
     // Filter data based on the selected tab
-    const filteredData = dataToDisplay.filter(item => {
-        if (filterStatus === 'Active' || filterStatus === 'Inactive') {
-            return item.status === filterStatus;
-        }
-        return item.status === filterStatus;
-    });
+    const filteredData = dataToDisplay.filter(item => item.status === filterStatus);
 
     const indexOfLastCustomer = currentPage * customersPerPage;
     const indexOfFirstCustomer = indexOfLastCustomer - customersPerPage;
@@ -48,6 +40,10 @@ const Reviews = () => {
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
+    };
+
+    const handlePlusCircleClick = () => {
+        navigate('/customers/client-details');
     };
 
     const renderPaginationButtons = () => {
@@ -68,7 +64,6 @@ const Reviews = () => {
 
     const renderTableHeaders = () => {
         if (filterStatus === 'Active' || filterStatus === 'Inactive') {
-            // Headers for Active/Inactive
             return (
                 <tr>
                     <th>Customer Name</th>
@@ -77,14 +72,14 @@ const Reviews = () => {
                     <th>Email</th>
                     <th>Meals</th>
                     <th>Status</th>
+                    <th>Edit</th>
                 </tr>
             );
         } else {
-            // Headers for Approved/Pending
             return (
                 <tr>
                     <th>Member ID</th>
-                    <th>medical ID</th>
+                    <th>Medicaid ID</th>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Request Type</th>
@@ -97,7 +92,6 @@ const Reviews = () => {
 
     const renderTableRows = () => {
         if (filterStatus === 'Active' || filterStatus === 'Inactive') {
-            // Rows for Active/Inactive Customers
             return currentData.map((customer) => (
                 <tr key={customer.id}>
                     <td>{customer.name}</td>
@@ -105,15 +99,21 @@ const Reviews = () => {
                     <td>{customer.phone}</td>
                     <td>{customer.email}</td>
                     <td>{customer.meals}</td>
-                    <td>{customer.status}</td>
+                    <td>
+                        <span className={`status ${customer.status.toLowerCase()}`}>
+                            {customer.status}
+                        </span>
+                    </td>
+                    <td>
+                        <button className="btn btn-edit">Edit</button>
+                    </td>
                 </tr>
             ));
         } else {
-            // Rows for Approved/Pending Members
             return currentData.map((member) => (
                 <tr key={member.id}>
                     <td>{member.member_ID}</td>
-                    <td>{member.medical_ID}</td>
+                    <td>{member.medicaid_ID}</td>
                     <td>{member.name}</td>
                     <td>{member.phone}</td>
                     <td>{member.request_type}</td>
@@ -122,7 +122,11 @@ const Reviews = () => {
                             <span className={`status ${member.status.toLowerCase()}`}>
                                 {member.status}
                             </span>
-                            {member.status === 'Approved' && <FiPlusCircle className='status-icon' />}
+                            {member.status === 'Approved' && (
+                                <button onClick={handlePlusCircleClick} className='status-icon-button'>
+                                    <FiPlusCircle className='status-icon' />
+                                </button>
+                            )}
                         </div>
                     </td>
                     <td>
@@ -149,31 +153,30 @@ const Reviews = () => {
                 <div className="table-header">
                     <div className='htext'>
                         <h2>All Customers</h2>
-                        {/* Tabs for filtering Active/Inactive and Approved/Pending members */}
                         <div className="tabs">
-                            <button 
-                                className={`tab-button ${filterStatus === 'Active' ? 'active' : ''}`} 
+                            <button
+                                className={`tab-button ${filterStatus === 'Active' ? 'active' : ''}`}
                                 onClick={() => setFilterStatus('Active')}
                             >
-                                Active Members
+                                Active
                             </button>
-                            <button 
-                                className={`tab-button ${filterStatus === 'Inactive' ? 'active' : ''}`} 
+                            <button
+                                className={`tab-button ${filterStatus === 'Inactive' ? 'inactive' : ''}`}
                                 onClick={() => setFilterStatus('Inactive')}
                             >
-                                Inactive Members
+                                Inactive
                             </button>
-                            <button 
-                                className={`tab-button ${filterStatus === 'Approved' ? 'active' : ''}`} 
+                            <button
+                                className={`tab-button ${filterStatus === 'Approved' ? 'approved' : ''}`}
                                 onClick={() => setFilterStatus('Approved')}
                             >
-                                Approved Members
+                                Approved
                             </button>
-                            <button 
-                                className={`tab-button ${filterStatus === 'Pending' ? 'active' : ''}`} 
+                            <button
+                                className={`tab-button ${filterStatus === 'Pending' ? 'pending' : ''}`}
                                 onClick={() => setFilterStatus('Pending')}
                             >
-                                Pending Members
+                                Pending
                             </button>
                         </div>
                     </div>
@@ -200,22 +203,8 @@ const Reviews = () => {
                     <div className="pagination-info">
                         Showing data {indexOfFirstCustomer + 1} to {Math.min(indexOfLastCustomer, filteredData.length)} of {filteredData.length} entries
                     </div>
-                    <div className="pagination-controls">
-                        <button
-                            onClick={() => handlePageChange(currentPage - 1)}
-                            disabled={currentPage === 1}
-                            className="pagination-button"
-                        >
-                            &lt;
-                        </button>
+                    <div className="pagination-buttons">
                         {renderPaginationButtons()}
-                        <button
-                            onClick={() => handlePageChange(currentPage + 1)}
-                            disabled={currentPage === totalPages}
-                            className="pagination-button"
-                        >
-                            &gt;
-                        </button>
                     </div>
                 </div>
             </div>
@@ -223,4 +212,4 @@ const Reviews = () => {
     );
 };
 
-export default Reviews;
+export default CustomerAllTabs;

@@ -1,6 +1,6 @@
 // src/components/CustomInput.jsx
 import React from 'react';
-import './CustomInput.css'; 
+import './customInput.css'; 
 
 const CustomInput = ({ id, name, placeholder, value, onChange, required, type = 'text' }) => {
   return (

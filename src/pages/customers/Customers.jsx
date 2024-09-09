@@ -2,25 +2,32 @@ import React, { useState } from 'react';
 import { FaPlus, FaFileImport, FaDownload } from 'react-icons/fa';
 import ButtonWithIcon from '../../elements/buttonWithIcon/ButtonWithIcon.jsx';
 import ClientDetailsForm from '../../components/clientDetailsForm/ClientDetailsForm.jsx';
-import CustomerList from '../../components/customerList/CustomerList.jsx';
 import ImportFileModal from '../../components/importFileModal/ImportFileModal.jsx';
 import './customers.css';
+
+// import CustomerListActive from '../../components/customerListActive/CustomerListActive.jsx';
+// import CustomerListApproved from '../../components/customerListApproved/customerListApproved.jsx';
+import CustomerAllTabs from '../../components/customerAllTabs/CustomerAllTabs.jsx';
 
 const Customers = () => {
   const [showImportModal, setShowImportModal] = useState(false);
   const [showClientForm, setShowClientForm] = useState(false);
+
+  const handleClientFormClose = () => {
+    setShowClientForm(false);
+  };
 
   return (
     <div className="customers-page">
       <div className="customers-header">
         <h1>All Customers</h1>
         <div className="customer-actions">
-          <ButtonWithIcon 
+          {/* <ButtonWithIcon 
             onClick={() => setShowClientForm(true)}
             icon={<FaPlus />}
             text="Add Customer"
             className="primary"
-          />
+          /> */}
 
           <ButtonWithIcon 
             onClick={() => setShowImportModal(true)}
@@ -37,9 +44,16 @@ const Customers = () => {
           />
         </div>
       </div>
-      <CustomerList />
+      <CustomerAllTabs />
       {showImportModal && <ImportFileModal onClose={() => setShowImportModal(false)} />}
-      {showClientForm && <ClientDetailsForm onClose={() => setShowClientForm(false)} />}
+      
+      {/* Full-page form rendering for ClientDetailsForm
+      {showClientForm && (
+        <div className="full-page-form">
+          <ClientDetailsForm onClose={handleClientFormClose} />
+        </div>
+      )} */}
+      
     </div>
   );
 };

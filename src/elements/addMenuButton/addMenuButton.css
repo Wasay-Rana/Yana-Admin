@@ -1,5 +1,4 @@
-/* Styles for the expanded state */
-.red-card {
+    /* .red-card {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,12 +8,29 @@
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     width: 180px;
-    transition: all 0.3s ease-in-out;
-}
+    transition: all 0.1s ease-in-out;
+} */
 
-.text-illustration {
-    display: flex;
-    flex-direction: column;
+
+
+/* Styles for the collapsed state */
+/* .red-card.collapsed {
+    justify-content: center;
+    background-color: #d61125;
+    border-radius: 30%;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    } */
+/*     
+    .text-illustration {
+        display: flex;
+        flex-direction: column;
+    }
+    .red-card.collapsed .text-illustration,
+    .red-card.collapsed img,
+    .red-card.collapsed .btn {
+    display: none;
 }
 
 .red-card p {
@@ -31,12 +47,12 @@
     font-weight: 300;
     padding: 8px 4px;
     margin-left: 9%;
-    transition: transform 0.1s;
+    transition: 0.1s;
 }
 
-.btn:hover {
-   transform: scale(1.05);
-   background-color: white;
+.text-illustration .btn:hover {
+    transform: scale(1.05);
+    background-color: white;
 }
 
 .red-card img {
@@ -45,32 +61,17 @@
     height: auto;
 }
 
-/* Styles for the collapsed state */
-.sidebar.collapsed .red-card {
-    justify-content: center;
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
     align-items: center;
-    background-color: #d61125;
-    padding: 0; /* Remove padding to make the circle more compact */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-left: 14px; /* Adjust this for your layout */
-    position: relative;
+    justify-content: center;
 }
 
-.sidebar.collapsed .red-card .text-illustration,
-.sidebar.collapsed .red-card img,
-.sidebar.collapsed .red-card .btn {
-    display: none;
-}
-
-.sidebar.collapsed .red-card::before {
-    content: '+';
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
-    line-height: 50px; /* Ensures the + symbol is centered vertically */
-    text-align: center;
-    width: 100%;
-    display: block;
-}
+.icon-btn svg {
+    color: #ffffff;
+    font-size: 24px; 
+} */
