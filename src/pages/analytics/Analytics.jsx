@@ -2,7 +2,6 @@ import React from 'react';
 import { FaChartPie, FaChartLine, FaMapMarkerAlt } from 'react-icons/fa';
 import { PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
-import './analytics.css';
 
 const pieChartData = [
   { name: 'Group A', value: 400 },
@@ -40,12 +39,15 @@ const markers = [
 
 const Analytics = () => {
   return (
-    <div className="analytics-page">
-      <h1>Analytics Dashboard</h1>
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-2xl font-semibold text-gray-700 mb-6">Analytics Dashboard</h1>
       
-      <div className="analytics-grid">
-        <div className="analytics-card pie-chart">
-          <h2><FaChartPie /> Pie Chart</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Pie Chart */}
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="flex items-center text-lg font-semibold text-gray-700 mb-4">
+            <FaChartPie className="text-red-600 mr-2" /> Pie Chart
+          </h2>
           <ResponsiveContainer width="100%" height={200}>
             <PieChart>
               <Pie
@@ -65,8 +67,11 @@ const Analytics = () => {
           </ResponsiveContainer>
         </div>
         
-        <div className="analytics-card donut-chart">
-          <h2><FaChartPie /> Donut Chart</h2>
+        {/* Donut Chart */}
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="flex items-center text-lg font-semibold text-gray-700 mb-4">
+            <FaChartPie className="text-red-600 mr-2" /> Donut Chart
+          </h2>
           <ResponsiveContainer width="100%" height={200}>
             <PieChart>
               <Pie
@@ -85,9 +90,12 @@ const Analytics = () => {
             </PieChart>
           </ResponsiveContainer>
         </div>
-        
-        <div className="analytics-card line-chart">
-          <h2><FaChartLine /> Chart Order</h2>
+
+        {/* Line Chart (Orders) */}
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="flex items-center text-lg font-semibold text-gray-700 mb-4">
+            <FaChartLine className="text-red-600 mr-2" /> Chart Order
+          </h2>
           <ResponsiveContainer width="100%" height={200}>
             <LineChart data={lineChartData}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -100,9 +108,12 @@ const Analytics = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        
-        <div className="analytics-card total-revenue">
-          <h2><FaChartLine /> Total Revenue</h2>
+
+        {/* Line Chart (Revenue) */}
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="flex items-center text-lg font-semibold text-gray-700 mb-4">
+            <FaChartLine className="text-red-600 mr-2" /> Total Revenue
+          </h2>
           <ResponsiveContainer width="100%" height={200}>
             <LineChart data={revenueData}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -115,9 +126,12 @@ const Analytics = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        
-        <div className="analytics-card customer-map">
-          <h2><FaMapMarkerAlt /> Customer Map</h2>
+
+        {/* Customer Map */}
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="flex items-center text-lg font-semibold text-gray-700 mb-4">
+            <FaMapMarkerAlt className="text-red-600 mr-2" /> Customer Map
+          </h2>
           <ComposableMap>
             <Geographies geography={geoUrl}>
               {({ geographies }) =>
@@ -137,7 +151,7 @@ const Analytics = () => {
                 <text
                   textAnchor="middle"
                   y={markerOffset}
-                  style={{ fontFamily: "system-ui", fill: "#5D5A6D" }}
+                  className="text-sm text-gray-600"
                 >
                   {name}
                 </text>

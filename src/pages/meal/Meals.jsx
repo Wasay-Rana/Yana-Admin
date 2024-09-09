@@ -1,7 +1,6 @@
 // src/pages/Meals.js
 
 import React, { useState, useEffect } from 'react';
-import './meals.css';
 
 const Meals = () => {
   const [meals, setMeals] = useState([]);
@@ -56,9 +55,9 @@ const Meals = () => {
   };
 
   return (
-    <div className="food-page">
-      <h1>Meals</h1>
-      <form className="add-meal-form" onSubmit={handleSubmit}>
+    <div className="p-5 bg-white">
+      <h1 className="text-2xl font-bold mb-6">Meals</h1>
+      <form className="bg-white p-6 rounded-lg shadow-md mb-6" onSubmit={handleSubmit}>
         <input
           type="text"
           name="title"
@@ -66,73 +65,109 @@ const Meals = () => {
           value={newMeal.title}
           onChange={handleInputChange}
           required
+          className="w-full p-2 mb-4 border border-gray-300 rounded-md text-sm"
         />
 
-        <div className="image-upload">
-          <p>Add meal images (Max. 4)</p>
-          <div className="file-input-wrapper">
-            <input type="file" onChange={handleImageUpload} multiple accept="image/*" />
-            <span className="file-input-text">Choose Files</span>
-            <span className="file-input-placeholder">No file chosen</span>
+        <div className="mb-4">
+          <p className="mb-2">Add meal images (Max. 4)</p>
+          <div className="relative inline-block border border-gray-300 rounded-md p-2 mr-2">
+            <input 
+              type="file" 
+              onChange={handleImageUpload} 
+              multiple 
+              accept="image/*"
+              className="absolute inset-0 opacity-0"
+            />
+            <span className="text-gray-700">Choose Files</span>
+            <span className="text-gray-500 ml-2">No file chosen</span>
           </div>
-          <button type="button" className="choose-file-button">Choose File</button>
-          <button type="button" className="save-button">Save</button>
+          <button type="button" className="bg-red-600 text-white px-4 py-2 rounded-md text-sm">Choose File</button>
+          <button type="button" className="bg-red-600 text-white px-4 py-2 rounded-md text-sm ml-2">Save</button>
         </div>
 
-        <div className="form-row">
-          <select name="category" value={newMeal.category} onChange={handleInputChange} required>
+        <div className="flex gap-5 mb-4">
+          <select 
+            name="category" 
+            value={newMeal.category} 
+            onChange={handleInputChange} 
+            required
+            className="flex-1 p-2 border border-gray-300 rounded-md text-sm"
+          >
             <option value="">Select Category</option>
             {/* Add meal categories here */}
           </select>
 
-          <select name="vendor" value={newMeal.vendor} onChange={handleInputChange} required>
+          <select 
+            name="vendor" 
+            value={newMeal.vendor} 
+            onChange={handleInputChange} 
+            required
+            className="flex-1 p-2 border border-gray-300 rounded-md text-sm"
+          >
             <option value="">Select Vendor</option>
             {/* Add vendors here */}
           </select>
         </div>
 
-        <div className="meal-labels">
-          <label><input type="checkbox" name="lowSodium" checked={newMeal.labels.lowSodium} onChange={handleInputChange} /> Low-sodium</label>
-          <label><input type="checkbox" name="lactoseIntolerant" checked={newMeal.labels.lactoseIntolerant} onChange={handleInputChange} /> Lactose intolerant</label>
-          <label><input type="checkbox" name="diabeticFriendly" checked={newMeal.labels.diabeticFriendly} onChange={handleInputChange} /> Diabetic friendly</label>
-          <label><input type="checkbox" name="vegetarian" checked={newMeal.labels.vegetarian} onChange={handleInputChange} /> Vegetarian</label>
-          <label><input type="checkbox" name="glutenFree" checked={newMeal.labels.glutenFree} onChange={handleInputChange} /> Gluten Free</label>
+        <div className="flex flex-wrap gap-4 mb-4">
+          <label className="flex items-center text-sm">
+            <input type="checkbox" name="lowSodium" checked={newMeal.labels.lowSodium} onChange={handleInputChange} className="mr-2" /> Low-sodium
+          </label>
+          <label className="flex items-center text-sm">
+            <input type="checkbox" name="lactoseIntolerant" checked={newMeal.labels.lactoseIntolerant} onChange={handleInputChange} className="mr-2" /> Lactose intolerant
+          </label>
+          <label className="flex items-center text-sm">
+            <input type="checkbox" name="diabeticFriendly" checked={newMeal.labels.diabeticFriendly} onChange={handleInputChange} className="mr-2" /> Diabetic friendly
+          </label>
+          <label className="flex items-center text-sm">
+            <input type="checkbox" name="vegetarian" checked={newMeal.labels.vegetarian} onChange={handleInputChange} className="mr-2" /> Vegetarian
+          </label>
+          <label className="flex items-center text-sm">
+            <input type="checkbox" name="glutenFree" checked={newMeal.labels.glutenFree} onChange={handleInputChange} className="mr-2" /> Gluten Free
+          </label>
         </div>
 
-        <div className="form-row">
-          <textarea name="description" placeholder="Meal Description" value={newMeal.description} onChange={handleInputChange}></textarea>
-          <textarea name="ingredients" placeholder="Ingredients" value={newMeal.ingredients} onChange={handleInputChange}></textarea>
+        <div className="flex gap-5 mb-4">
+          <textarea 
+            name="description" 
+            placeholder="Meal Description" 
+            value={newMeal.description} 
+            onChange={handleInputChange}
+            className="w-full p-2 border border-gray-300 rounded-md text-sm"
+          />
+          <textarea 
+            name="ingredients" 
+            placeholder="Ingredients" 
+            value={newMeal.ingredients} 
+            onChange={handleInputChange}
+            className="w-full p-2 border border-gray-300 rounded-md text-sm"
+          />
         </div>
 
-        <div className="form-row">
-          <textarea name="nutritionInfo" placeholder="Nutrition Info" value={newMeal.nutritionInfo} onChange={handleInputChange}></textarea>
-          <textarea name="allergies" placeholder="Allergies" value={newMeal.allergies} onChange={handleInputChange}></textarea>
+        <div className="flex gap-5 mb-4">
+          <textarea 
+            name="nutritionInfo" 
+            placeholder="Nutrition Info" 
+            value={newMeal.nutritionInfo} 
+            onChange={handleInputChange}
+            className="w-full p-2 border border-gray-300 rounded-md text-sm"
+          />
+          <textarea 
+            name="allergies" 
+            placeholder="Allergies" 
+            value={newMeal.allergies} 
+            onChange={handleInputChange}
+            className="w-full p-2 border border-gray-300 rounded-md text-sm"
+          />
         </div>
 
-        <button type="submit" className="confirm-button">Confirm</button>
+        <button 
+          type="submit" 
+          className="bg-red-600 text-white px-6 py-3 rounded-md text-lg mx-auto block"
+        >
+          Confirm
+        </button>
       </form>
-{/* 
-      <table className="meals-table">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {meals.map(meal => (
-            <tr key={meal.id}>
-              <td>{meal.title}</td>
-              <td>{meal.category}</td>
-              <td>
-                <button className="edit-button">Edit</button>
-                <button className="delete-button">Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
     </div>
   );
 };

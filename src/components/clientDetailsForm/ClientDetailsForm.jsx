@@ -256,7 +256,7 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div className="mb-[15px]">
+                    <div className="mb-[15px] w-full">
                         <label className="block font-bold mb-[5px]">No. Of Meals *</label>
                         <div className="flex gap-[20px] text-lg">
                             <label className="flex items-center cursor-pointer">
@@ -284,7 +284,7 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <h2 className="text-[#959595] mb-[15px] text-xl">Alternate Contact</h2>
+                    <h2 className="text-[#959595] mb-[15px] text-xl w-full text-left">Alternate Contact</h2>
 
                     <div className="flex flex-wrap gap-[10px] mb-[15px] w-full">
                         <div className="flex-1 min-w-[1px]">
