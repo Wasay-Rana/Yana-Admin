@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.client-details-page {
+    margin: 0px 30px;
+    background-color: white;
+    padding: 25px 40px;
+    border-radius: 22px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.client-details-form {
+    font-family: 'Poppins', sans-serif;
+    padding: 0px 30px;
+}
+
+.client-details-form h2 {
+    color: #959595;
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-row-auth {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.enteries {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 1px;
+}
+
+.custom-input {
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Ensure padding is included in the total width */
+}
+
+.cpt-code-group {
+    display: flex;
+    gap: 5px;
+}
+
+.cpt-code-group button {
+    flex: 1;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cpt-code-group button.active {
+    background-color: #0E6D99;
+    color: #fff;
+}
+
+.meal-options {
+    display: flex;
+    gap: 20px;
+    font-size: large;
+}
+
+.meal-options {
+    display: flex;
+    /* Aligns meal options horizontally */
+    gap: 20px;
+    /* Adds space between meal options */
+    font-size: large;
+    /* Sets a large font size for better readability */
+}
+
+.meal-options input[type="checkbox"] {
+    width: 20px;
+    /* Increases the width of the checkbox */
+    height: 20px;
+    /* Increases the height of the checkbox */
+    transform: scale(1);
+    /* Scales the checkbox size */
+    margin-right: 10px;
+    /* Adds space between the checkbox and label text */
+    accent-color: #0E6D99;
+    /* Changes the checkbox color when checked */
+}
+
+.meal-options label {
+    display: flex;
+    align-items: center;
+    /* Centers the checkbox and label text vertically */
+    cursor: pointer;
+    /* Changes cursor to pointer on hover */
+}
+
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bottom-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+
+}
+
+.bottom-buttons .btn {
+    padding: 8px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-btn {
+    background-color: #0E6D99;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #CDCDCD;
+    color: rgb(0, 0, 0);
+}
+
+.three-columns {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.three-columns .form-group {
+    flex: 1;
+    min-width: 150px;
+}
