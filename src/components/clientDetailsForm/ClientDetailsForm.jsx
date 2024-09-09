@@ -44,13 +44,13 @@ const Chat = ({ onClose }) => {
     };
 
     return (
-        <div className="mx-8 bg-white p-6 md:p-10 rounded-[22px]">
-            <div className="font-barlow px-8">
-                <h2 className="text-gray mb-4 text-xl">Client Details</h2>
+        <div className="mx-[30px] bg-white p-[25px] md:p-[40px] rounded-[22px]">
+            <div className="font-['Poppins',sans-serif] px-[30px]">
+                <h2 className="text-[#959595] mb-[15px] text-xl">Client Details</h2>
                 <form onSubmit={handleSubmit}>
-                    <div className="flex flex-wrap gap-2.5 mb-4">
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="firstName" className="block font-bold mb-1.5">Client Name *</label>
+                    <div className="flex flex-wrap gap-[10px] mb-[15px] w-full">
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="firstName" className="block font-bold mb-[5px]">Client Name *</label>
                             <CustomInput
                                 id="firstName"
                                 name="firstName"
@@ -61,8 +61,8 @@ const Chat = ({ onClose }) => {
                                 className="w-full"
                             />
                         </div>
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="lastName" className="block font-bold mb-1.5">&nbsp;</label>
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="lastName" className="block font-bold mb-[5px]">&nbsp;</label>
                             <CustomInput
                                 id="lastName"
                                 name="lastName"
@@ -75,9 +75,9 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-2.5 mb-4">
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="medicalId" className="block font-bold mb-1.5">Medical ID *</label>
+                    <div className="flex flex-wrap gap-[10px] mb-[15px] w-full">
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="medicalId" className="block font-bold mb-[5px]">Medical ID *</label>
                             <CustomInput
                                 id="medicalId"
                                 name="medicalId"
@@ -87,8 +87,8 @@ const Chat = ({ onClose }) => {
                                 className="w-full"
                             />
                         </div>
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="insuranceId" className="block font-bold mb-1.5">Insurance ID *</label>
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="insuranceId" className="block font-bold mb-[5px]">Insurance ID *</label>
                             <CustomInput
                                 id="insuranceId"
                                 name="insuranceId"
@@ -100,8 +100,8 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block font-bold mb-1.5">Client Email</label>
+                    <div className="mb-[15px] w-full">
+                        <label htmlFor="email" className="block font-bold mb-[5px]">Client Email</label>
                         <CustomInput
                             id="email"
                             name="email"
@@ -113,19 +113,19 @@ const Chat = ({ onClose }) => {
                         />
                     </div>
 
-                    <div className="flex flex-wrap gap-2.5 mb-4">
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="cptCode" className="block font-bold mb-1.5">CPT Code *</label>
-                            <div className="flex gap-1.5">
+                    <div className="flex flex-wrap gap-[10px] mb-[15px] w-full">
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="cptCode" className="block font-bold mb-[5px]">CPT Code *</label>
+                            <div className="flex gap-[5px]">
                                 {['W1785', 'W1760', 'W1784', 'R899'].map((code) => (
                                     <button
                                         key={code}
                                         type="button"
                                         className={`flex-1 py-2 px-4 rounded ${
                                             formData.cptCode === code
-                                                ? 'bg-blue text-white'
-                                                : 'bg-white border border-gray'
-                                        }`}
+                                                ? 'bg-[#0E6D99] text-white'
+                                                : 'bg-white border border-[#ccc]'
+                                        } cursor-pointer`}
                                         onClick={() => setFormData({ ...formData, cptCode: code })}
                                     >
                                         {code}
@@ -133,8 +133,8 @@ const Chat = ({ onClose }) => {
                                 ))}
                             </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="icd10Code" className="block font-bold mb-1.5">ICD-10 Code *</label>
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="icd10Code" className="block font-bold mb-[5px]">ICD-10 Code *</label>
                             <CustomInput
                                 id="icd10Code"
                                 name="icd10Code"
@@ -146,11 +146,11 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div className="mb-4">
-                        <h3 className="font-bold mb-2">Authorization Date *</h3>
-                        <div className="flex gap-2.5">
-                            <div className="flex-1 min-w-0">
-                                <label htmlFor="authorizationStartDate" className="block font-bold mb-1.5">Start Date *</label>
+                    <div className="flex flex-col gap-[10px] mb-[15px] w-full">
+                        <h3 className="font-bold">Authorization Date *</h3>
+                        <div className="flex flex-row gap-[10px]">
+                            <div className="flex-1 min-w-[1px]">
+                                <label htmlFor="authorizationStartDate" className="block font-bold mb-[5px]">Start Date *</label>
                                 <CustomInput
                                     type="date"
                                     id="authorizationStartDate"
@@ -161,8 +161,8 @@ const Chat = ({ onClose }) => {
                                     className="w-full"
                                 />
                             </div>
-                            <div className="flex-1 min-w-0">
-                                <label htmlFor="authorizationEndDate" className="block font-bold mb-1.5">End Date</label>
+                            <div className="flex-1 min-w-[1px]">
+                                <label htmlFor="authorizationEndDate" className="block font-bold mb-[5px]">End Date</label>
                                 <CustomInput
                                     type="date"
                                     id="authorizationEndDate"
@@ -176,8 +176,8 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="allergies" className="block font-bold mb-1.5">Allergies *</label>
+                    <div className="mb-[15px] w-full">
+                        <label htmlFor="allergies" className="block font-bold mb-[5px]">Allergies *</label>
                         <CustomInput
                             type="text"
                             id="allergies"
@@ -189,9 +189,9 @@ const Chat = ({ onClose }) => {
                         />
                     </div>
 
-                    <div className="flex flex-wrap gap-2.5 mb-4">
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="street" className="block font-bold mb-1.5">Client Address *</label>
+                    <div className="flex flex-wrap gap-[10px] mb-[15px] w-full">
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="street" className="block font-bold mb-[5px]">Client Address *</label>
                             <CustomInput
                                 type="text"
                                 id="street"
@@ -203,8 +203,8 @@ const Chat = ({ onClose }) => {
                                 className="w-full"
                             />
                         </div>
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="address" className="block font-bold mb-1.5">&nbsp;</label>
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="address" className="block font-bold mb-[5px]">&nbsp;</label>
                             <CustomInput
                                 type="text"
                                 id="address"
@@ -217,7 +217,7 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-5 mb-4">
+                    <div className="flex gap-[20px] w-full mb-[15px]">
                         <div className="flex-1 min-w-[150px]">
                             <CustomInput
                                 type="text"
@@ -256,9 +256,9 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div className="mb-4">
-                        <label className="block font-bold mb-1.5">No. Of Meals *</label>
-                        <div className="flex gap-5 text-lg">
+                    <div className="mb-[15px]">
+                        <label className="block font-bold mb-[5px]">No. Of Meals *</label>
+                        <div className="flex gap-[20px] text-lg">
                             <label className="flex items-center cursor-pointer">
                                 <input
                                     type="checkbox"
@@ -266,7 +266,7 @@ const Chat = ({ onClose }) => {
                                     value="7"
                                     checked={formData.meals === '7'}
                                     onChange={handleInputChange}
-                                    className="w-5 h-5 mr-2.5 accent-blue"
+                                    className="w-[20px] h-[20px] mr-[10px] accent-[#0E6D99]"
                                 />
                                 7 meals
                             </label>
@@ -277,18 +277,18 @@ const Chat = ({ onClose }) => {
                                     value="14"
                                     checked={formData.meals === '14'}
                                     onChange={handleInputChange}
-                                    className="w-5 h-5 mr-2.5 accent-blue"
+                                    className="w-[20px] h-[20px] mr-[10px] accent-[#0E6D99]"
                                 />
                                 14 meals
                             </label>
                         </div>
                     </div>
 
-                    <h2 className="text-gray mb-4 text-xl">Alternate Contact</h2>
+                    <h2 className="text-[#959595] mb-[15px] text-xl">Alternate Contact</h2>
 
-                    <div className="flex flex-wrap gap-2.5 mb-4">
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="contactFirstName" className="block font-bold mb-1.5">Contact Name *</label>
+                    <div className="flex flex-wrap gap-[10px] mb-[15px] w-full">
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="contactFirstName" className="block font-bold mb-[5px]">Contact Name *</label>
                             <CustomInput
                                 type="text"
                                 id="contactFirstName"
@@ -300,8 +300,8 @@ const Chat = ({ onClose }) => {
                                 className="w-full"
                             />
                         </div>
-                        <div className="flex-1 min-w-0">
-                            <label htmlFor="contactLastName" className="block font-bold mb-1.5">&nbsp;</label>
+                        <div className="flex-1 min-w-[1px]">
+                            <label htmlFor="contactLastName" className="block font-bold mb-[5px]">&nbsp;</label>
                             <CustomInput
                                 type="text"
                                 id="contactLastName"
@@ -315,8 +315,8 @@ const Chat = ({ onClose }) => {
                         </div>
                     </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="phoneNumber" className="block font-bold mb-1.5">Phone Number *</label>
+                    <div className="mb-[15px] w-full">
+                        <label htmlFor="phoneNumber" className="block font-bold mb-[5px]">Phone Number *</label>
                         <CustomInput
                             type="text"
                             id="phoneNumber"
@@ -328,17 +328,17 @@ const Chat = ({ onClose }) => {
                         />
                     </div>
 
-                    <div className="flex gap-2 mt-5">
+                    <div className="flex gap-[8px] mt-[20px]">
                         <button
                             type="button"
-                            className="px-8 py-2 bg-[#CDCDCD] text-black font-bold rounded-full"
+                            className="px-[30px] py-2 bg-[#CDCDCD] text-black font-bold rounded-[20px] cursor-pointer"
                             onClick={handleCancel}
                         >
                             Cancel
                         </button>
                         <button
                             type="submit"
-                            className="px-8 py-2 bg-black text-white font-bold rounded-full"
+                            className="px-[30px] py-2 bg-[#0E6D99] text-white font-bold rounded-[20px] cursor-pointer"
                         >
                             Submit
                         </button>
