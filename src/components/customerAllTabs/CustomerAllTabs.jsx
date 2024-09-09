@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import SearchBar from '../../elements/searchBar/SearchBar';
 import { FiTrash2, FiEdit, FiPlusCircle } from "react-icons/fi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import './CustomerAllTabs.css';
+import './customerAllTabs.css';
 
 const CustomerAllTabs = () => {
     const navigate = useNavigate();
