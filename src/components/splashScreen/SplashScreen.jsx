@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
 
-import './splashScreen.css';
-
-
 function SplashScreen() {
   const navigate = useNavigate();
 
@@ -18,10 +15,10 @@ function SplashScreen() {
   }, [navigate]);
 
   return (
-    <div className="splash-screen">
-      <img src={logo} alt="YANA Logo" className="logo" />
-      {/* <h1>YANA</h1>
-      <p>You Are Never Alone</p> */}
+    <div className="flex flex-col justify-center items-center h-screen bg-white text-black">
+      <img src={logo} alt="YANA Logo" className="max-w-1/2 max-h-1/2" />
+      {/* <h1 className="text-3xl mb-2">YANA</h1>
+      <p className="text-xl">You Are Never Alone</p> */}
     </div>
   );
 }
