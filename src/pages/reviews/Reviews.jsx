@@ -21,8 +21,8 @@ const Reviews = () => {
 
     // Data for Approved/Pending Members
     const approvedPendingMembers = [
-        { id: 1, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved', actions: '' },
-        { id: 2, member_ID: 1234567, medicaid_ID: 10101010, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending', actions: '' },
+        { id: 1, member_ID: 1234567, medical_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Approved', actions: '' },
+        { id: 2, member_ID: 1234567, medical_ID: 10101010, name: "Jane Cooper", phone: '(205) 555-0100', request_type: 'MEDICAL', status: 'Pending', actions: '' },
         // ... (add more member data here)
     ];
 
@@ -84,7 +84,7 @@ const Reviews = () => {
             return (
                 <tr>
                     <th>Member ID</th>
-                    <th>Medicaid ID</th>
+                    <th>medical ID</th>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Request Type</th>
@@ -113,7 +113,7 @@ const Reviews = () => {
             return currentData.map((member) => (
                 <tr key={member.id}>
                     <td>{member.member_ID}</td>
-                    <td>{member.medicaid_ID}</td>
+                    <td>{member.medical_ID}</td>
                     <td>{member.name}</td>
                     <td>{member.phone}</td>
                     <td>{member.request_type}</td>

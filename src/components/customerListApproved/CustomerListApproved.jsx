@@ -6,8 +6,8 @@ import './customerListApproved.css';
 
 const CustomerListApproved = () => {
     const customers = [
-        { id: 1, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', request_status: 'Approved', status: 'actions' },
-        { id: 2, member_ID: 1234567, medicaid_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', request_status: 'Pending', status: 'actions' }
+        { id: 1, member_ID: 1234567, medical_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', request_status: 'Approved', status: 'actions' },
+        { id: 2, member_ID: 1234567, medical_ID: 10101010, name: "Marvin McKinney", phone: '(205) 555-0100', request_type: 'MEDICAL', request_status: 'Pending', status: 'actions' }
         // ... (add more customer data here)
     ];
 
@@ -61,7 +61,7 @@ const CustomerListApproved = () => {
                     <thead>
                         <tr>
                             <th>Member ID</th>
-                            <th>Medicaid ID</th>
+                            <th>Medical ID</th>
                             <th>Name</th>
                             <th>Phone</th>
                             <th>Request Type</th>
@@ -73,7 +73,7 @@ const CustomerListApproved = () => {
                         {currentCustomers.map((customer) => (
                             <tr key={customer.id}>
                                 <td>{customer.member_ID}</td>
-                                <td>{customer.medicaid_ID}</td>
+                                <td>{customer.medical_ID}</td>
                                 <td>{customer.name}</td>
                                 <td>{customer.phone}</td>
                                 <td>{customer.request_type}</td>

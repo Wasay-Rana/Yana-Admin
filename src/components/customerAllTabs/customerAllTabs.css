@@ -201,25 +201,18 @@ th {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-  }
-  
-.customer-list .btn-edit {
-    background-color: #FF9800;
-    color: white;
-    border: none;
-    border-radius: 24px;
-    height: 25px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
-.customer-list .btn-edit:hover,
-.customer-list .btn-edit:focus {
+.chevron-right{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #6e6e6e;
+    cursor: pointer;
+}
+
+.customer-list .btn-edit-yellow:hover,
+.customer-list .btn-edit-yellow:focus {
     background-color: #e68900;
     color: white;
     outline: none;
@@ -232,12 +225,17 @@ th {
 }
   */
 
-.customer-list .btn-edit {
+.customer-list .btn-edit-yellow {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: center;
     background-color: #FF9800;
     color: white;
     border: none;
     border-radius: 24px;
-    height: 25px;
+    width: 4.5rem;
+    height: 1.5rem;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -245,8 +243,8 @@ th {
     transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
-.customer-list .btn-edit:hover,
-.customer-list .btn-edit:focus {
+.customer-list .btn-edit-yellow:hover,
+.customer-list .btn-edit-yellow:focus {
     background-color: #e68900;
     color: white;
     outline: none;
@@ -260,31 +258,44 @@ th {
     gap: 16px;
 }
 
-.table-header .tabs button{
+.table-header .tabs button {
     background-color: transparent;
     border: none;
     font-size: 14px;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease;
 }
 
-.tab-button{
+.tab-button {
     color: #B5B7C0;
 }
 
 .tab-button.active,
-.tab-button.approved{
+.tab-button.approved {
     color: #16C098;
-    text-decoration: underline; 
+    text-decoration: underline;
     text-underline-offset: 6px;
 }
 
 .tab-button.inactive,
-.tab-button.pending{
+.tab-button.pending {
     color: #d61125;
-    text-decoration: underline; 
+    text-decoration: underline;
     text-underline-offset: 6px;
 }
 
+.edited-row {
+    background-color: rgba(255, 220, 116, 0.4);
+}
+
+
+.warning-icon {
+    color: #ff0000;
+    padding-right: 0px;
+}
+
+.second-th {
+    padding-right: 0px;
+}
