@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CrossButton from '../../elements/crossButton/CrossButton';
 import CustomInput from '../../elements/customInput/CustomInput';
-import './clientDetailsForm.css';
 
 const Chat = ({ onClose }) => {
-
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -38,7 +36,6 @@ const Chat = ({ onClose }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        // Handle form submission
         onClose();
     };
 
@@ -47,13 +44,13 @@ const Chat = ({ onClose }) => {
     };
 
     return (
-        <div className="client-details-page">
-            <div className="client-details-form">
-                <h2>Client Details</h2>
+        <div className="mx-8 bg-white p-6 md:p-10 rounded-[22px]">
+            <div className="font-barlow px-8">
+                <h2 className="text-gray mb-4 text-xl">Client Details</h2>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="firstName">Client Name *</label>
+                    <div className="flex flex-wrap gap-2.5 mb-4">
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="firstName" className="block font-bold mb-1.5">Client Name *</label>
                             <CustomInput
                                 id="firstName"
                                 name="firstName"
@@ -61,10 +58,11 @@ const Chat = ({ onClose }) => {
                                 value={formData.firstName}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="lastName">&nbsp;</label>
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="lastName" className="block font-bold mb-1.5">&nbsp;</label>
                             <CustomInput
                                 id="lastName"
                                 name="lastName"
@@ -72,74 +70,87 @@ const Chat = ({ onClose }) => {
                                 value={formData.lastName}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
                     </div>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="medicalId">medical ID *</label>
+                    <div className="flex flex-wrap gap-2.5 mb-4">
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="medicalId" className="block font-bold mb-1.5">Medical ID *</label>
                             <CustomInput
                                 id="medicalId"
                                 name="medicalId"
                                 value={formData.medicalId}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="insuranceId">Insurance ID *</label>
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="insuranceId" className="block font-bold mb-1.5">Insurance ID *</label>
                             <CustomInput
                                 id="insuranceId"
                                 name="insuranceId"
                                 value={formData.insuranceId}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
                     </div>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="email">Client Email</label>
-                            <CustomInput
-                                id="email"
-                                name="email"
-                                type="email"
-                                placeholder="Email Address"
-                                value={formData.email}
-                                onChange={handleInputChange}
-                            />
-                        </div>
+                    <div className="mb-4">
+                        <label htmlFor="email" className="block font-bold mb-1.5">Client Email</label>
+                        <CustomInput
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="Email Address"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            className="w-full"
+                        />
                     </div>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="cptCode">CPT Code *</label>
-                            <div className="cpt-code-group">
-                                <button type="button" className={formData.cptCode === 'W1785' ? 'active' : ''} onClick={() => setFormData({ ...formData, cptCode: 'W1785' })}>W1785</button>
-                                <button type="button" className={formData.cptCode === 'W1760' ? 'active' : ''} onClick={() => setFormData({ ...formData, cptCode: 'W1760' })}>W1760</button>
-                                <button type="button" className={formData.cptCode === 'W1784' ? 'active' : ''} onClick={() => setFormData({ ...formData, cptCode: 'W1784' })}>W1784</button>
-                                <button type="button" className={formData.cptCode === 'R899' ? 'active' : ''} onClick={() => setFormData({ ...formData, cptCode: 'R899' })}>R899</button>
+                    <div className="flex flex-wrap gap-2.5 mb-4">
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="cptCode" className="block font-bold mb-1.5">CPT Code *</label>
+                            <div className="flex gap-1.5">
+                                {['W1785', 'W1760', 'W1784', 'R899'].map((code) => (
+                                    <button
+                                        key={code}
+                                        type="button"
+                                        className={`flex-1 py-2 px-4 rounded ${
+                                            formData.cptCode === code
+                                                ? 'bg-blue text-white'
+                                                : 'bg-white border border-gray'
+                                        }`}
+                                        onClick={() => setFormData({ ...formData, cptCode: code })}
+                                    >
+                                        {code}
+                                    </button>
+                                ))}
                             </div>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="icd10Code">ICD-10 Code *</label>
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="icd10Code" className="block font-bold mb-1.5">ICD-10 Code *</label>
                             <CustomInput
                                 id="icd10Code"
                                 name="icd10Code"
                                 value={formData.icd10Code}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
                     </div>
 
-                    <div className="form-row-auth">
-                        <h3>Authorization Date *</h3>
-                        <div className='enteries'>
-                            <div className="form-group">
-                                <label htmlFor="authorizationStartDate">Start Date *</label>
+                    <div className="mb-4">
+                        <h3 className="font-bold mb-2">Authorization Date *</h3>
+                        <div className="flex gap-2.5">
+                            <div className="flex-1 min-w-0">
+                                <label htmlFor="authorizationStartDate" className="block font-bold mb-1.5">Start Date *</label>
                                 <CustomInput
                                     type="date"
                                     id="authorizationStartDate"
@@ -147,10 +158,11 @@ const Chat = ({ onClose }) => {
                                     value={formData.authorizationStartDate}
                                     onChange={handleInputChange}
                                     required
+                                    className="w-full"
                                 />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="authorizationEndDate">End Date</label>
+                            <div className="flex-1 min-w-0">
+                                <label htmlFor="authorizationEndDate" className="block font-bold mb-1.5">End Date</label>
                                 <CustomInput
                                     type="date"
                                     id="authorizationEndDate"
@@ -158,28 +170,28 @@ const Chat = ({ onClose }) => {
                                     value={formData.authorizationEndDate}
                                     onChange={handleInputChange}
                                     required
+                                    className="w-full"
                                 />
                             </div>
                         </div>
                     </div>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="allergies">Allergies *</label>
-                            <CustomInput
-                                type="text"
-                                id="allergies"
-                                name="allergies"
-                                value={formData.allergies}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </div>
+                    <div className="mb-4">
+                        <label htmlFor="allergies" className="block font-bold mb-1.5">Allergies *</label>
+                        <CustomInput
+                            type="text"
+                            id="allergies"
+                            name="allergies"
+                            value={formData.allergies}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full"
+                        />
                     </div>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="street">Client Address *</label>
+                    <div className="flex flex-wrap gap-2.5 mb-4">
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="street" className="block font-bold mb-1.5">Client Address *</label>
                             <CustomInput
                                 type="text"
                                 id="street"
@@ -188,10 +200,11 @@ const Chat = ({ onClose }) => {
                                 value={formData.street}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="address">&nbsp;</label>
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="address" className="block font-bold mb-1.5">&nbsp;</label>
                             <CustomInput
                                 type="text"
                                 id="address"
@@ -199,12 +212,13 @@ const Chat = ({ onClose }) => {
                                 placeholder="Address"
                                 value={formData.address}
                                 onChange={handleInputChange}
+                                className="w-full"
                             />
                         </div>
                     </div>
 
-                    <div className="form-row three-columns">
-                        <div className="form-group">
+                    <div className="flex flex-wrap gap-5 mb-4">
+                        <div className="flex-1 min-w-[150px]">
                             <CustomInput
                                 type="text"
                                 id="city"
@@ -213,9 +227,10 @@ const Chat = ({ onClose }) => {
                                 value={formData.city}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="flex-1 min-w-[150px]">
                             <CustomInput
                                 type="text"
                                 id="state"
@@ -224,9 +239,10 @@ const Chat = ({ onClose }) => {
                                 value={formData.state}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="flex-1 min-w-[150px]">
                             <CustomInput
                                 type="text"
                                 id="zipCode"
@@ -235,45 +251,44 @@ const Chat = ({ onClose }) => {
                                 value={formData.zipCode}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
                     </div>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>No. Of Meals *</label>
-                            <div className="meal-options">
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="meals"
-                                        value="7"
-                                        checked={formData.meals === '7'}
-                                        onChange={handleInputChange}
-                                    />
-                                    7 meals
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        name="meals"
-                                        value="14"
-                                        checked={formData.meals === '14'}
-                                        onChange={handleInputChange}
-                                    />
-                                    14 meals
-                                </label>
-                            </div>
+                    <div className="mb-4">
+                        <label className="block font-bold mb-1.5">No. Of Meals *</label>
+                        <div className="flex gap-5 text-lg">
+                            <label className="flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="meals"
+                                    value="7"
+                                    checked={formData.meals === '7'}
+                                    onChange={handleInputChange}
+                                    className="w-5 h-5 mr-2.5 accent-blue"
+                                />
+                                7 meals
+                            </label>
+                            <label className="flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="meals"
+                                    value="14"
+                                    checked={formData.meals === '14'}
+                                    onChange={handleInputChange}
+                                    className="w-5 h-5 mr-2.5 accent-blue"
+                                />
+                                14 meals
+                            </label>
                         </div>
                     </div>
 
-                    <div className="form-row">
-                        <h2>Alternate Contact</h2>
-                    </div>
+                    <h2 className="text-gray mb-4 text-xl">Alternate Contact</h2>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="contactFirstName">Contact Name *</label>
+                    <div className="flex flex-wrap gap-2.5 mb-4">
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="contactFirstName" className="block font-bold mb-1.5">Contact Name *</label>
                             <CustomInput
                                 type="text"
                                 id="contactFirstName"
@@ -282,10 +297,11 @@ const Chat = ({ onClose }) => {
                                 value={formData.contactFirstName}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="contactLastName">&nbsp;</label>
+                        <div className="flex-1 min-w-0">
+                            <label htmlFor="contactLastName" className="block font-bold mb-1.5">&nbsp;</label>
                             <CustomInput
                                 type="text"
                                 id="contactLastName"
@@ -294,27 +310,38 @@ const Chat = ({ onClose }) => {
                                 value={formData.contactLastName}
                                 onChange={handleInputChange}
                                 required
+                                className="w-full"
                             />
                         </div>
                     </div>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="phoneNumber">Phone Number *</label>
-                            <CustomInput
-                                type="text"
-                                id="phoneNumber"
-                                name="phoneNumber"
-                                value={formData.phoneNumber}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </div>
+                    <div className="mb-4">
+                        <label htmlFor="phoneNumber" className="block font-bold mb-1.5">Phone Number *</label>
+                        <CustomInput
+                            type="text"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            value={formData.phoneNumber}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full"
+                        />
                     </div>
 
-                    <div className="bottom-buttons">
-                        <button type="button" className="btn cancel-btn" onClick={handleCancel}>Cancel</button>
-                        <button type="submit" className="btn submit-btn">Submit</button>
+                    <div className="flex gap-2 mt-5">
+                        <button
+                            type="button"
+                            className="px-8 py-2 bg-[#CDCDCD] text-black font-bold rounded-full"
+                            onClick={handleCancel}
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            type="submit"
+                            className="px-8 py-2 bg-black text-white font-bold rounded-full"
+                        >
+                            Submit
+                        </button>
                     </div>
                 </form>
             </div>
