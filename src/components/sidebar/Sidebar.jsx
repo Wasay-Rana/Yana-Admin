@@ -38,7 +38,6 @@ function Sidebar() {
             }`}
             /*className={`flex items-center justify-center ${isCollapsed ? 'gap-0 mb-[60%]' : 'mb-12'
         } transition-all duration-300 ease-in-out`}*/
-         
         >
             <div
                 className={`flex items-center justify-center ${
