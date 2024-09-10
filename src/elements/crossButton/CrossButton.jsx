@@ -1,11 +1,10 @@
 import React from 'react';
-import './crossButton.css'; // Import the CSS for styling
 
 const CrossButton = ({ onClick, className = '', ...props }) => {
   return (
     <button 
       type="button" 
-      className={`cross-button ${className}`} 
+      className={`bg-none border-none cursor-pointer flex items-center justify-center p-2 rounded-full min-w-[20px] transition-colors duration-300 ease-in-out hover:bg-black/10 ${className}`} 
       onClick={onClick} 
       {...props}
     >
