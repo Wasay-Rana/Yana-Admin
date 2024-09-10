@@ -15,8 +15,7 @@ const Customers = () => {
 
   return (
     <div className="p-5">
-      <div className="flex justify-between items-center mb-5">
-        <h1>All Customers</h1>
+      <div className="flex justify-end items-center mb-5">
         <div className="flex gap-3">
           {/* Uncomment this to add a customer */}
           {/* <ButtonWithIcon 
@@ -41,6 +40,7 @@ const Customers = () => {
           />
         </div>
       </div>
+
       <CustomerAllTabs />
       {showImportModal && <ImportFileModal onClose={() => setShowImportModal(false)} />}
       
