@@ -125,16 +125,16 @@ const Meals = () => {
             <input type="checkbox" name="lowSodium" checked={newMeal.labels.lowSodium} onChange={handleInputChange} className="mr-2" /> Low-sodium
           </label>
           <label className="flex items-center text-sm">
-            <input type="checkbox" name="lowSodium" checked={newMeal.labels.lowSodium} onChange={handleInputChange} className="mr-2" /> Lactose intolerant
+            <input type="checkbox" name="lactoseIntolerant" checked={newMeal.labels.lactoseIntolerant} onChange={handleInputChange} className="mr-2" /> Lactose Intolerant
           </label>
           <label className="flex items-center text-sm">
-            <input type="checkbox" name="lowSodium" checked={newMeal.labels.lowSodium} onChange={handleInputChange} className="mr-2" /> Diabetic friendly
+            <input type="checkbox" name="diabeticFriendly" checked={newMeal.labels.diabeticFriendly} onChange={handleInputChange} className="mr-2" /> Diabetic Friendly
           </label>
           <label className="flex items-center text-sm">
-            <input type="checkbox" name="lowSodium" checked={newMeal.labels.lowSodium} onChange={handleInputChange} className="mr-2" /> Vegetarian
+            <input type="checkbox" name="vegetarian" checked={newMeal.labels.vegetarian} onChange={handleInputChange} className="mr-2" /> Vegetarian
           </label>
           <label className="flex items-center text-sm">
-            <input type="checkbox" name="lowSodium" checked={newMeal.labels.lowSodium} onChange={handleInputChange} className="mr-2" /> Gluten Free
+            <input type="checkbox" name="glutenFree" checked={newMeal.labels.glutenFree} onChange={handleInputChange} className="mr-2" /> Gluten Free
           </label>
           </div>
         </div>
