@@ -10,7 +10,6 @@ import { MdOutlineFoodBank } from "react-icons/md";
 import { FaRegChartBar } from 'react-icons/fa';
 import { RiPencilLine } from "react-icons/ri";
 import { BsChatLeftDots } from "react-icons/bs";
-import { IoChevronDownOutline } from "react-icons/io5";
 import logo from '../../assets/yanaLogo.png';
 import logoCollapsed from '../../assets/mainLogo.png';
 import { toggleSidebar } from './SidebarSlice.jsx';
@@ -21,7 +20,7 @@ function Sidebar() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [isCustomersExpanded, setIsCustomersExpanded] = useState(false);
-    const [isActive, setIsActive] = useState(false); // State for active button
+    const [isActive, setIsActive] = useState(false);
 
     const toggleSidebarState = () => {
         dispatch(toggleSidebar());
@@ -29,40 +28,47 @@ function Sidebar() {
 
     const toggleCustomersSection = () => {
         setIsCustomersExpanded((prev) => !prev);
-        setIsActive(true); // Set button as active when clicked
+        setIsActive(true);
     };
 
     return (
         <div
-            className={`flex flex-col justify-between bg-white h-screen p-5 transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20 p-5 pt-0' : 'w-64'}`}
+            className={`flex flex-col justify-between bg-white h-screen p-5 transition-all duration-500 ease-in-out ${
+                isCollapsed ? 'w-20 p-5 pt-0' : 'w-64'
+            }`}
+            /*className={`flex items-center justify-center ${isCollapsed ? 'gap-0 mb-[60%]' : 'mb-12'
+        } transition-all duration-300 ease-in-out`}*/
+         
         >
-
-
             <div
-                className={`flex items-center justify-center ${isCollapsed ? 'gap-0 mb-[60%]' : 'mb-12'
-                    } transition-all duration-300 ease-in-out`}
+                className={`flex items-center justify-center ${
+                    isCollapsed ? 'gap-0 mb-[60%]' : 'mb-12'
+                } transition-all duration-500 ease-in-out`}
             >
-                <div>
-                    {!isCollapsed && (
-                        <img
-                            src={logo}
-                            alt="YANA Logo"
-                            className={`transition-all duration-300 ease-in-out ${isCollapsed
-                                ? 'w-full h-[50%] mt-2'
-                                : 'w-[200px] h-[70px]'
-                                }`}
-                        />
-                    )}
+                <div className="overflow-hidden">
+                    <img
+                        src={logo}
+                        alt="YANA Logo"
+                        className={`transition-all duration-500 ease-in-out ${
+                            isCollapsed
+                                ? 'w-0 h-0 opacity-0'
+                                : 'w-[200px] h-[70px] opacity-100'
+                        }`}
+                    />
                 </div>
 
-                <div className={`cursor-pointer transition-all duration-300 ease-in-out ${isCollapsed
-                    ? 'relative left-1/2 top-[85%] transform -translate-x-1/2'
-                    : ''
-                    }`} onClick={toggleSidebarState}>
+                <div 
+                    className={`cursor-pointer transition-all duration-500 ease-in-out ${
+                        isCollapsed
+                            ? 'relative left-1/2 top-[85%] transform -translate-x-1/2'
+                            : ''
+                    }`} 
+                    onClick={toggleSidebarState}
+                >
                     {isCollapsed ? (
-                        <img src={logoCollapsed} alt="Collapsed Logo" className="w-11 h-11" />
+                        <img src={logoCollapsed} alt="Collapsed Logo" className="w-11 h-11 animate-pulse" />
                     ) : (
-                        <BiChevronsLeft size={28} color="#d61125" />
+                        <BiChevronsLeft size={28} color="#d61125" className="hover:scale-110 transition-transform duration-300" />
                     )}
                 </div>
             </div>
@@ -83,23 +89,29 @@ function Sidebar() {
                             <NavLink
                                 to={to}
                                 className={({ isActive }) =>
-                                    `flex items-center font-medium no-underline text-base p-2.5 rounded-lg relative transition-all duration-300 ease-in-out ${isActive
-                                        ? `text-red-600 ${isCollapsed
-                                            ? "bg-[#ffe6e9] before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:w-9 before:h-9 before:rounded-md before:transform before:-translate-x-1/2 before:-translate-y-1/2"
-                                            : "bg-[#ffe6e9] before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-red-600 before:rounded-l-md pl-4"
-                                        }`
-                                        : `text-gray-800 ${isCollapsed ? "justify-center rounded-full" : "pl-4"
-                                        }`
+                                    `flex items-center font-medium no-underline text-base p-2.5 rounded-lg relative transition-all duration-300 ease-in-out ${
+                                        isActive
+                                            ? `text-red-600 ${
+                                                isCollapsed
+                                                    ? "bg-[#ffe6e9] before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:w-9 before:h-9 before:rounded-md before:transform before:-translate-x-1/2 before:-translate-y-1/2"
+                                                    : "bg-[#ffe6e9] before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-red-600 before:rounded-l-md pl-4"
+                                            }`
+                                            : `text-gray-800 hover:bg-gray-100 ${
+                                                isCollapsed ? "justify-center rounded-full" : "pl-4"
+                                            }`
                                     }`
                                 }
                             >
                                 <span
-                                    className={`text-lg ${isCollapsed ? "flex items-center justify-center" : "mr-4"
-                                        } ${isActive && isCollapsed ? '' : "text-inherit"}`}
+                                    className={`text-lg ${
+                                        isCollapsed ? "flex items-center justify-center" : "mr-4"
+                                    } ${isActive && isCollapsed ? '' : "text-inherit"} transition-transform duration-300 ease-in-out transform group-hover:scale-110`}
                                 >
                                     {icon}
                                 </span>
-                                <span className={isCollapsed ? "hidden" : ""}>{label}</span>
+                                <span className={`${isCollapsed ? "hidden" : ""} transition-opacity duration-300 ease-in-out ${isCollapsed ? "opacity-0" : "opacity-100"}`}>
+                                    {label}
+                                </span>
                             </NavLink>
                         </li>
                     ))}
@@ -110,9 +122,6 @@ function Sidebar() {
                 {isCollapsed ? null : <p className="my-1"></p>}
                 <AddMenuButton isCollapsed={isCollapsed} onClick={() => navigate('/meals')} />
             </div>
-
-
-
         </div>
     );
 }
