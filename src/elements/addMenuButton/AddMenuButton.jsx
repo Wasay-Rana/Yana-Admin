@@ -13,7 +13,7 @@ const AddMenuButton = ({ isCollapsed, onClick }) => {
       {!isCollapsed ? (
         <div className="flex flex-col">
           <p style={{ color: 'white', textAlign: 'left' }}
-            f2f5f3 className="text-white font-light text-xs text-left">
+            className="text-white font-light text-xs text-left">
             Please organize your menus through button below!
           </p>
           <button
@@ -26,7 +26,7 @@ const AddMenuButton = ({ isCollapsed, onClick }) => {
         </div>
       ) : (
         <button
-          className="bg-main border-none cursor-pointer flex items-center justify-center"
+          className="bg-yana-red border-none cursor-pointer flex items-center justify-center"
           onClick={onClick}
         >
           <FiPlusCircle  style={{color:"white", fontSize: '16px'}} className="text-white text-2xl" />

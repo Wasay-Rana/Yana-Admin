@@ -7,29 +7,40 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        barlow: ['Barlow', 'sans-serif']},
-        colors: {
-          'main': '#d61125',
-          'blue': '#0E6D99',
-          'custom-blue': '#2d9cdb',
-          'three': '#e00256',
-          'black': '#212121',
-          'white': '#ffffff',
-          'custom-gray': '#808080e2',
-          gray: {
-            50: '#f9fafb',
-            100: '#f3f4f6',
-            200: '#e5e7eb',
-            300: '#d1d5db',
-            400: '#9ca3af',
-            500: '#6b7280',
-            600: '#4b5563',
-            700: '#374151',
-            800: '#1f2937',
-            900: '#111827',
-          },
-        },
+        barlow: ['Barlow', 'font-poppins', 'sans-serif']},
+      colors: {
+        'yana-red': '#d61125',
+        'yana-blue': '#0E6D99',
+        'yana-black': '#303030',
+        'yana-white': '#fcf7f8',
+        'yana-gold': '#fe8c00',
+        'yana-green': '#008767',
+        'yana-navy': '#464255',
+        'yana-green-2': '#16C098',
+        'yana-light-green': '#c0f8eb',
+        'yana-light-green2': '#A6E7D8',
+        'yana-green2': '#16C098',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    // Add custom plugin for hiding scrollbars
+    function({ addUtilities }) {
+      addUtilities(
+        {
+          '.scrollbar-hidden': {
+            'overflow': 'auto',
+            '-webkit-overflow-scrolling': 'touch',
+          },
+          '.scrollbar-hidden::-webkit-scrollbar': {
+            'display': 'none',
+          },
+          '.scrollbar-hidden': {
+            'scrollbar-width': 'none',
+          },
+        },
+        ['responsive', 'hover']
+      );
+    },
+  ],
 }

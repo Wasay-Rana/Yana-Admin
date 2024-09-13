@@ -1,22 +1,21 @@
 import React from 'react';
-import './table.css';
 
 const Table = ({ headers, rows }) => {
   return (
-    <div className="table-container-component">
-      <table className="custom-table-component">
+    <div className="bg-white rounded-xl p-5 pb-2.5 font-poppins">
+      <table className="w-full table-auto">
         <thead>
           <tr>
             {headers.map((header, index) => (
-              <th key={index}>{header}</th>
+              <th key={index} className="text-left p-2 text-gray-600 font-medium">{header}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, rowIndex) => (
-            <tr key={rowIndex}>
+            <tr key={rowIndex} className="border-b">
               {headers.map((header, colIndex) => (
-                <td key={colIndex}>{row[header]}</td>
+                <td key={colIndex} className="p-2 text-gray-700">{row[header]}</td>
               ))}
             </tr>
           ))}

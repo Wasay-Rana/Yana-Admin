@@ -15,6 +15,8 @@ import Reviews from './pages/reviews/Reviews';
 import SplashScreen from './components/splashScreen/SplashScreen';
 import Vendor from './pages/vendor/Vendor';
 import './global.css';
+import CredsTable from './components/generateCredentials/CredsTable';
+import Participants from './pages/customers/Participants';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/dashboard" element={<PrivateRoute><Layout><Dashboard /></Layout></PrivateRoute>} />
         <Route path="/orders" element={<PrivateRoute><Layout><Order /></Layout></PrivateRoute>} />
         <Route path="/customers" element={<PrivateRoute><Layout><Customers /></Layout></PrivateRoute>} />
+        <Route path="/customers" element={<PrivateRoute><Layout><Customers /></Layout></PrivateRoute>} />
+        <Route path="/participants" element={<PrivateRoute><Layout><Participants /></Layout></PrivateRoute>} />
         <Route path="/customers/client-details" element={<PrivateRoute><Layout><ClientDetailsForm /></Layout></PrivateRoute>} />
         <Route path="/customers/detailed-info" element={<PrivateRoute><Layout><CustomerDetailedInfo /></Layout></PrivateRoute>} />
 

@@ -1,6 +1,7 @@
 import { React, useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { IoIosLogOut } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
 import IconNotification from '../../assets/customIcons/IconNotification.svg';
 import IconChat from '../../assets/customIcons/IconChat.svg';
@@ -12,9 +13,17 @@ function Header() {
   const isCollapsed = useSelector((state) => state.sidebar.isCollapsed);
   const [showLogout, setShowLogout] = useState(false);
   const logoutRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     setShowLogout((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    // Clear authentication tokens or user data here
+    // For example: localStorage.removeItem('authToken');
+    // alert('Logged out!');
+    navigate('/login');
   };
 
   useEffect(() => {
@@ -42,11 +51,11 @@ function Header() {
         <div className="relative mr-2.5 p-2 rounded-[0.9rem] bg-[rgba(45,156,219,0.15)]">
           <img src={IconNotification} alt="Notification" />
           <span className="absolute -top-3 -right-1 bg-[#0E6D99] text-white text-xs px-1.5 rounded-full border border-white">3</span>
-          </div>
+        </div>
         <div className="relative mr-5 p-2 rounded-[0.9rem] bg-[rgba(45,156,219,0.15)]">
           <img src={IconChat} alt="Chat" />
           <span className="absolute -top-3 -right-1 bg-[#0E6D99] text-white text-xs px-1.5 rounded-full border border-white">3</span>
-          </div>
+        </div>
         <div className="flex justify-center items-center gap-2.5">
           <p className="text-xl">
             Hello,<span className="font-medium">Wasay</span>
@@ -62,7 +71,7 @@ function Header() {
                 <ButtonWithIcon
                   icon={<IoIosLogOut />}
                   text='Logout'
-                  onClick={() => alert('Logged out!')}
+                  onClick={handleLogout}
                   className='bg-[#d61125] rounded px-2.5 py-1.5 text-white cursor-pointer text-base font-bold hover:text-[#ff0019] transition-colors duration-300'
                 />
               </div>

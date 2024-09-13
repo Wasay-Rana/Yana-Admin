@@ -4,8 +4,9 @@ import ButtonWithIcon from '../../elements/buttonWithIcon/ButtonWithIcon.jsx';
 import ClientDetailsForm from '../../components/clientDetailsForm/ClientDetailsForm.jsx';
 import ImportFileModal from '../../components/importFileModal/ImportFileModal.jsx';
 import CustomerAllTabs from '../../components/customerAllTabs/CustomerAllTabs.jsx';
+import CredsTable from '../../components/generateCredentials/CredsTable.jsx';
 
-const Customers = () => {
+const Participants = () => {
   const [showImportModal, setShowImportModal] = useState(false);
   const [showClientForm, setShowClientForm] = useState(false);
 
@@ -41,7 +42,7 @@ const Customers = () => {
         </div>
       </div>
 
-      <CustomerAllTabs />
+      <CredsTable />
       {showImportModal && <ImportFileModal onClose={() => setShowImportModal(false)} />}
       
       {/* Full-page form rendering for ClientDetailsForm */}
@@ -54,4 +55,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default Participants;
