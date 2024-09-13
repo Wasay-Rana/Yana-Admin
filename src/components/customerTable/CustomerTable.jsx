@@ -9,20 +9,13 @@ function CustomerTable({ customers }) {
           <h2 className="text-2xl font-semibold">All Customers</h2>
           <h5 className="text-yana-green2 font-medium">Active Members</h5>
         </div>
-        <div className="flex items-center space-x-4">
-          <SearchBar />
-          <div className="relative">
-            <select className="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-600 py-2 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-              <option value="newest">Sort by: Newest</option>
-              <option value="oldest">Sort by: Oldest</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-600">
-              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M7 10l5 5 5-5H7z" />
-              </svg>
-            </div>
-          </div>
-        </div>
+        <div className="flex gap-2">
+                        <SearchBar className='h-8 bg-[#F9FBFF] border border-gray-100 rounded-md px-2'/>
+                        <select className="h-8 bg-[#F9FBFF] border-gray-100 rounded-md px-2">
+                            <option value="newest">Sort by: Newest</option>
+                            <option value="oldest">Sort by: Oldest</option>
+                        </select>
+                    </div>
       </div>
       <table className="w-full border-collapse">
         <thead>
